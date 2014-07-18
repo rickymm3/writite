@@ -46,3 +46,7 @@ end
 group :production, :development do
   gem "thin"
 end
+
+gem 'acts_as_nested_interval', '~> 0.2.0'
+gem 'haml-rails'
+gem 'better_errors',      group: :development
