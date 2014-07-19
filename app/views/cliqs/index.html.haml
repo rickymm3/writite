@@ -1,0 +1,9 @@
+%p Welcome
+=current_user.email if current_user
+=current_user.username if current_user
+%br
+
+%ul
+  -@categories.each do |cat|
+    %li
+      =link_to cat.name, cat

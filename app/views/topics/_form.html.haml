@@ -1,0 +1,14 @@
+= form_for [@topic.cliq, @topic] do |f|
+
+  %div.field
+    = f.label :subject
+    %br
+    = f.text_field :subject
+
+  %div.field
+    = f.label :body
+    %br
+    = f.text_field :body
+
+  %div.actions
+    =f.submit

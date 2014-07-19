@@ -1,0 +1,6 @@
+%h1 Topics#index
+%p Find me in app/views/topics/index.html.haml
+%ul
+  -@topics.each do |topic|
+    %li=topic.subject
+    (#{topic.cliq.name})

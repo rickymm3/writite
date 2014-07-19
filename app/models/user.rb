@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
 
   devise :omniauthable
 
+  validates :username, presence: true
+  validates :username, uniqueness: true, if: -> { self.username.present? }
+
   has_and_belongs_to_many :roles
 
   def role?(role)

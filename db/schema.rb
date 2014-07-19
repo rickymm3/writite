@@ -11,20 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140718151902) do
+ActiveRecord::Schema.define(version: 20140719040231) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cliqs", force: true do |t|
-    t.integer "parent_id"
-    t.integer "lftp",                                null: false
-    t.integer "lftq",                                null: false
-    t.integer "rgtp",                                null: false
-    t.integer "rgtq",                                null: false
-    t.decimal "lft",       precision: 31, scale: 30, null: false
-    t.decimal "rgt",       precision: 31, scale: 30, null: false
-    t.string  "name",                                null: false
+    t.integer  "parent_id"
+    t.integer  "lftp",                                                  null: false
+    t.integer  "lftq",                                                  null: false
+    t.integer  "rgtp",                                                  null: false
+    t.integer  "rgtq",                                                  null: false
+    t.decimal  "lft",         precision: 31, scale: 30,                 null: false
+    t.decimal  "rgt",         precision: 31, scale: 30,                 null: false
+    t.string   "name",                                                  null: false
+    t.boolean  "is_category",                           default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "cliqs", ["lft"], name: "index_cliqs_on_lft", using: :btree
@@ -82,6 +85,7 @@ ActiveRecord::Schema.define(version: 20140718151902) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

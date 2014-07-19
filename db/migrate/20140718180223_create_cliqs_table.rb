@@ -1,4 +1,4 @@
-class CreateCliqs < ActiveRecord::Migration
+class CreateCliqsTable < ActiveRecord::Migration
   def change
     create_table :cliqs do |t|
       t.integer :parent_id
@@ -9,6 +9,7 @@ class CreateCliqs < ActiveRecord::Migration
       t.decimal :lft, precision: 31, scale: 30, null: false
       t.decimal :rgt, precision: 31, scale: 30, null: false
       t.string :name, null: false
+      t.boolean :is_category, default: false
     end
     add_index :cliqs, :parent_id
     add_index :cliqs, :lftp

@@ -1,4 +1,4 @@
 class Topic < ActiveRecord::Base
-  belongs_to :cliqs
-  has_many :posts
+  belongs_to :cliq
+  has_many :post
 end
