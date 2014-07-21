@@ -1,13 +1,18 @@
 class CliqsController < ApplicationController
   before_action :set_cliq, only: [:show, :edit, :update, :destroy]
   def index
-    @categories = Cliq.where(is_category: true)
+    @search = params['search'] if params['search']
+    @cliq = Cliq.find(7)
+    @descendants = @cliq.descendants.select(:id).order("updated_at desc").limit(10).collect(&:id)
+    @descendants << @cliq.id
+    @topics = Topic.where(cliq_id: @descendants).order("updated_at desc").limit(10)
   end
 
   def show
-    @descendants = @cliq.descendants.order("updated_at desc").limit(10)
-    @descendants << @cliq
-    @topics = @cliq.topic
+    @search = params['search'] if params['search']
+    @descendants = @cliq.descendants.select(:id).order("updated_at desc").limit(10).collect(&:id)
+    @descendants << @cliq.id
+    @topics = Topic.where(cliq_id: @descendants).order("updated_at desc").limit(10)
   end
 
   private

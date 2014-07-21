@@ -3,7 +3,14 @@
 =current_user.username if current_user
 %br
 
-%ul
-  -@categories.each do |cat|
+=@search if @search
+
+%ul.topics
+  -@topics.each do |t|
     %li
-      =link_to cat.name, cat
+      =t.subject
+      =" - "
+      -ancestors = t.cliq.ancestors
+      -ancestors << t.cliq
+      -ancestors.each do |desc|
+        =desc.name

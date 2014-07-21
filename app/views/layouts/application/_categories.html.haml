@@ -1,0 +1,8 @@
+%div.collapse.navbar-collapse#baseapp-navbar-collapse-1
+  %ul.nav.navbar-nav
+    %ul.categories
+      -@categories.each do |cat|
+        %li
+          =link_to cat.name, cat
+      %li
+        Favorites v
