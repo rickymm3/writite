@@ -11,7 +11,7 @@
             %ul.nav.categories
               -@categories.each do |cat|
                 %li
-                  =link_to cat.name, cat
+                  =link_to cat.name.capitalize, cat
               %li
                 =link_to "#" do
                   Favorites

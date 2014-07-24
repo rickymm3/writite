@@ -1,3 +1,15 @@
+.search
+  -if @search
+    -if @matching_search.blank?
+      = "No Match - Create new Cliq for: "
+      = link_to @search, '#'
+    -if @similar_search.present? && @similar_search.count != 1
+      Similar searches:
+      .div
+        %ul
+          -@similar_search.each do |cliq|
+            %li
+              =link_to cliq.name, cliq_path(cliq)
 
 %ul
   -@topics.each do |t|

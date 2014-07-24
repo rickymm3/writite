@@ -1,7 +1,7 @@
 class CliqsController < ApplicationController
   before_action :set_cliq, only: [:show, :edit, :update, :destroy]
   def index
-    @search = params['search'] if params['search']
+    @search = params[:search] if params[:search]
     @cliq = Cliq.find(7)
     @descendants = @cliq.descendants.select(:id).order("updated_at desc").limit(10).collect(&:id)
     @descendants << @cliq.id
@@ -9,7 +9,12 @@ class CliqsController < ApplicationController
   end
 
   def show
-    @search = params['search'] if params['search']
+    if params[:search]
+      @search = params[:search]
+      @matching_search = Cliq.matching_search(params[:search]).first
+      @similar_search = Cliq.similar_search(params[:search])
+      @cliq = @matching_search if @matching_search
+    end
     @descendants = @cliq.descendants.select(:id).order("updated_at desc").limit(10).collect(&:id)
     @descendants << @cliq.id
     @topics = Topic.where(cliq_id: @descendants).order("updated_at desc").limit(10)
