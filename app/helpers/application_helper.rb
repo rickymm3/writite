@@ -7,4 +7,13 @@ module ApplicationHelper
     link_to title, { :sort => column, :direction => direction }, { :class => css_class }
   end
 
+  def get_ancestors(cliq)
+    ancestors = cliq.ancestors
+    ancestors << cliq
+  end
+
+  def cliq_btn(cliq)
+
+  end
+
 end

@@ -1,15 +1,8 @@
-%p=@cliq.name
-= form_tag cliq_path(@cliq), :method => 'get' do
-  %p
-    = text_field_tag :search, params[:search]
-    = submit_tag "Search", :name => nil
-=@search if @search
+
 %ul
   -@topics.each do |t|
     %li
       =t.subject
       =" - "
-      -ancestors = t.cliq.ancestors
-      -ancestors << t.cliq
-      -ancestors.each do |desc|
+      -get_ancestors(t.cliq).each do |desc|
         =desc.name

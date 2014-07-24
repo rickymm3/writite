@@ -1,0 +1,27 @@
+.navbar.navbar-fluid-top.cliq-bar
+  .navbar-inner
+    .container-fluid
+      .container
+        %ul.nav.cliq-history
+          -get_ancestors(@cliq).each do |desc|
+            -if desc.name == 'Cliq'
+              %li
+                %a.left.brand(href="/")
+                  Cliq!
+                  ='<i class="fa fa-angle-right"></i>'.html_safe
+            -else
+              %li
+                =link_to cliq_path(desc) do
+                  .cliq-btn
+                    =desc.name
+                  %i.fa.fa-angle-right
+          %li
+            = form_tag cliq_path(@cliq), :method => 'get' do
+              %p
+
+                = text_field_tag :search, params[:search],
+                  class: 'form-control',
+                  type: 'search',
+                  placeholder:"Search for a Cliq"
+                =button_tag '<i class="fa fa-search"></i>'.html_safe, class: 'btn'
+            =@search if @search

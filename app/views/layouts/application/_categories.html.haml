@@ -1,8 +1,32 @@
-%div.collapse.navbar-collapse#baseapp-navbar-collapse-1
-  %ul.nav.navbar-nav
-    %ul.categories
-      -@categories.each do |cat|
-        %li
-          =link_to cat.name, cat
-      %li
-        Favorites v
+.navbar.navbar-fluid-top.top-header
+  .navbar-inner
+    .container-fluid
+      %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      .container.nav-collapse
+        .row
+          .col-md-10.col-lg-10.col-sm-10
+            %ul.nav.categories
+              -@categories.each do |cat|
+                %li
+                  =link_to cat.name, cat
+              %li
+                =link_to "#" do
+                  Favorites
+                  %i.fa.fa-caret-down
+          .col-md-2.col-lg-10.col-sm-10
+            %ul.nav.account
+              -if user_signed_in?
+                %li
+                  = link_to edit_user_registration_path do
+                    =current_user.username.capitalize
+                    %i.fa.fa-caret-down
+                - if current_user.admin?
+                  %li= link_to "Admin", admin_path
+                %li= link_to "Sign out", destroy_user_session_path
+              -else
+                %li<%= link_to "Sign up", new_user_registration_path
+                %li<%= link_to "Sign in", new_user_session_path
+                %li<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)
