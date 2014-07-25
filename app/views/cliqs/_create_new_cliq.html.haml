@@ -1,0 +1,18 @@
+.create_new_cliq
+  = "No Match - Create new Cliq for: "
+  %ul.history
+    -get_ancestors(@cliq).each do |desc|
+      -if desc.name == 'Cliq'
+        %li
+          %a.left.brand(href="/")
+            Cliq!
+            ='<i class="fa fa-angle-right"></i>'.html_safe
+      -else
+        %li
+          =link_to cliq_path(desc) do
+            .cliq-btn
+              =desc.name.capitalize
+            .carrot.left
+              %i.fa.fa-angle-right
+    %li
+      = link_to @search['temp'].name, '#'

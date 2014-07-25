@@ -1,0 +1,7 @@
+.similar_searches
+  Similar searches:
+  .div
+    %ul
+      -@search['results'].each do |cliq|
+        %li
+          =link_to cliq.name, cliq_path(cliq)
