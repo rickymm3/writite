@@ -1,5 +1,6 @@
 class CliqsController < ApplicationController
   before_action :set_cliq, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:index, :show]
 
   def index
     @search = params[:search] if params[:search]
@@ -11,7 +12,7 @@ class CliqsController < ApplicationController
 
   def show
     set_search(params[:search])
-    unless @search['match']
+    unless @search['temp']
       @descendants = @cliq.descendants.select(:id).order("updated_at desc").limit(10).collect(&:id)
       @descendants << @cliq.id
     end

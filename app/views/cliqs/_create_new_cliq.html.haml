@@ -1,4 +1,6 @@
 .create_new_cliq
+  - unless user_signed_in?
+    .not_signed_in Non-Members can not create Cliqs
   = "No Match - Create new Cliq for: "
   %ul.history
     -get_ancestors(@cliq).each do |desc|
