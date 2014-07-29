@@ -21,11 +21,15 @@
     = yield :head
 
     %body
-    = render "layouts/application/categories"
-    = render "layouts/application/cliq_bar"
-
-    %div.container-fluid
-
-      = render "layouts/application/flash_messages"
-
-      = yield
+    .cliq_bar
+      = render "layouts/application/cliq_bar"
+    .container
+      .row
+        .col-lg-9.col-md-9.col-sm-12
+          = bootstrap_flash
+          = yield
+        .col-lg-3.col-md-3.col-sm-12
+          .well.sidebar-nav
+            = render "layouts/application/side_bar"
+      %footer
+        %p &copy; Company 2014

@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  before_action :set_cliq, only: [:new]
 
   def index
     @topics = Topic.limit(10).order(:created_at)
@@ -27,6 +28,7 @@ class TopicsController < ApplicationController
   end
 
   def new
+    @create = true
     @topic = Topic.new(cliq_id: params[:cliq_id])
   end
 
@@ -37,6 +39,12 @@ class TopicsController < ApplicationController
   end
 
   private
+
+  def set_cliq
+    @cliq = Cliq.find(params[:cliq_id])
+    @ancestors = @cliq.ancestors
+    @cliq_ancestors = @ancestors << @cliq
+  end
 
   def set_topic
     @topic = Topic.find(params[:id])

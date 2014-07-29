@@ -1,9 +1,9 @@
-.create_new_cliq
+.create-new-cliq
   - unless user_signed_in?
     .not_signed_in Non-Members can not create Cliqs
   = "No Match - Create new Cliq for: "
   %ul.history
-    -get_ancestors(@cliq).each do |desc|
+    -@cliq.ancestors.each do |desc|
       -if desc.name == 'Cliq'
         %li
           %a.left.brand(href="/")
@@ -12,9 +12,9 @@
       -else
         %li
           =link_to cliq_path(desc) do
-            .cliq-btn
+            %span.cliq-btn
               =desc.name.capitalize
-            .carrot.left
-              %i.fa.fa-angle-right
+            %span.carrot
+          %i.fa.fa-angle-right
     %li
       = link_to @search['temp'].name, '#'

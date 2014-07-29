@@ -1,0 +1,8 @@
+%ul.nav
+  -@categories.each do |cat|
+    %li
+      =link_to cat.name.capitalize, cat
+  %li
+    =link_to "#" do
+      Favorites
+      %i.fa.fa-caret-down

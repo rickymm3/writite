@@ -2,6 +2,9 @@
   Similar searches:
   .div
     %ul
-      -@search['results'].each do |cliq|
-        %li
-          =link_to cliq.name, cliq_path(cliq)
+      -if @search['results'].empty?
+        Nada, sorry! (but hey .. you can create one!)
+      -else
+        -@search['results'].each do |cliq|
+          %li
+            =link_to cliq.name, cliq_path(cliq)

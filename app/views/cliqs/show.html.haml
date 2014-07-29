@@ -1,13 +1,13 @@
 .search
   -if @search['temp']
     =render 'create_new_cliq'
-  -if @search['results'].present? && @search['results'].count != 1
+  -if @search['results']
     =render 'similar_searches'
 
 %ul
   -@topics.each do |t|
     %li
       =t.subject
-      =" - "
-      -get_ancestors(t.cliq).each do |desc|
+      =" ----- "
+      -t.cliq.ancestors.each do |desc|
         =desc.name
