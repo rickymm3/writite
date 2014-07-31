@@ -1,6 +1,8 @@
 .search
-  -if @search['temp']
+  -if @search['temp'] && user_signed_in?
     =render 'create_new_cliq'
+  -else
+    =render 'sign_in_to_create_cliq'
   -if @search['results']
     =render 'similar_searches'
 

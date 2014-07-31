@@ -1,13 +1,11 @@
--@cliq_ancestors.each do |desc|
-  -unless desc.name == 'cliq'
-    %li
-      =link_to cliq_path(desc) do
-        %span.cliq-btn
-          =desc.name.capitalize
-        %i.fa.fa-angle-right
+-full_ancestry(@cliq).each do |desc|
+  -unless desc.name == 'cliq' || desc.id.blank?
+    %li.cliq-info-hover{data:{cliq_id:desc.id}}
+      =render "shared/cliq", desc: desc
+      =render "shared/cliq_info", cliq:desc
 -if @cliq.id.blank?
   %li
     =link_to '#' do
       %span.cliq-btn
-        %stong
-          =@cliq.name.capitalize
+        =@cliq.name.capitalize
+

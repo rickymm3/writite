@@ -1,0 +1,11 @@
+%button{type:'button', class:'navbar-toggle',data_toggle:'collapse',data_target:'#navbar-collapse-1'}
+  %span.sr-only
+    Toggle navigation
+  %span.icon-bar
+  %span.icon-bar
+  %span.icon-bar
+%ul
+  %li.cliq-info-hover{ data:{cliq_id:1}, style:"list-style-type:none"}
+    %a.navbar-brand{href:"/"}
+      Cliq!
+    =render "shared/cliq_info"

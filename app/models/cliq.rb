@@ -27,4 +27,8 @@ class Cliq < ActiveRecord::Base
       scoped
     end
   end
+
+  def self.cliq_latest(cliq)
+    cliq.descendants.order("updated_at desc").limit(10)
+  end
 end

@@ -1,10 +1,8 @@
 .similar_searches
   Similar searches:
-  .div
-    %ul
-      -if @search['results'].empty?
-        Nada, sorry! (but hey .. you can create one!)
-      -else
-        -@search['results'].each do |cliq|
-          %li
-            =link_to cliq.name, cliq_path(cliq)
+  -if @search['results'].empty?
+    No similar results
+  -else
+    -@search['results'].each do |cliq|
+      =render "history", cliq:cliq
+      %br

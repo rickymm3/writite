@@ -7,5 +7,9 @@ module ApplicationHelper
     link_to title, { :sort => column, :direction => direction }, { :class => css_class }
   end
 
+  def full_ancestry(cliq)
+    ancestors = cliq.ancestors
+    ancestors << cliq
+  end
 
 end

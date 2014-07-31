@@ -1,0 +1,10 @@
+-full_ancestry(cliq).each do |desc|
+  -unless desc.name == 'cliq' || desc.id.blank?
+    %li
+      =render "shared/cliq", desc: desc
+-if cliq.id.blank?
+  %li
+    =link_to '#' do
+      %span.cliq-btn
+        =cliq.name.capitalize
+

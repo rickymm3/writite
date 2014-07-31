@@ -33,8 +33,6 @@ class CliqsController < ApplicationController
       cliq = 1
     end
     @cliq = Cliq.find(cliq)
-    @ancestors = @cliq.ancestors
-    @cliq_ancestors = @ancestors << @cliq
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

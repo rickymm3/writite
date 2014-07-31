@@ -1,20 +1,11 @@
 %nav.navbar.navbar-default{role:'navigation'}
   .container-fluid
     .navbar-header
-      %button{type:'button', class:'navbar-toggle',data_toggle:'collapse',data_target:'#navbar-collapse-1'}
-        %span.sr-only
-          Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      %a.navbar-brand{href:"/"}
-        Cliq!
-        %i.fa.fa-angle-right
+      =render "layouts/application/cliq_bar/cliq_brand"
 
     %div.collapse.navbar-collapse#navbar-collapse-1
       %ul.nav.navbar-nav
-        = render "layouts/application/cliq_bar/cliq_history" if @cliq
-      -if @cliq
-        =render "layouts/application/cliq_bar/cliq_search" unless @create
+        =render "layouts/application/cliq_bar/cliq_history" if @cliq
+        =render "layouts/application/cliq_bar/cliq_search" if @cliq.present? && @create != true
       %ul.nav.navbar-nav.navbar-right
         =render "layouts/application/cliq_bar/account"
