@@ -2,13 +2,14 @@
 -if cliq
   %div{class:"cliq-info cliq-info-#{cliq.id}"}
     %nav
-      -cliq_latest = Cliq.cliq_latest(cliq)
-      -if cliq_latest.count > 0
-        -Cliq.cliq_latest(cliq).each do |latest|
-          %li
-            =link_to latest.name.capitalize, latest
-      -else
-        No cliq info currently
+      %ul.nav
+        -cliq_latest = Cliq.cliq_latest(cliq)
+        -if cliq_latest.count > 0
+          -Cliq.cliq_latest(cliq).each do |latest|
+            %li
+              =link_to latest.name.capitalize, latest
+        -else
+          No cliq info currently
 -else
   %div{class:"cliq-info cliq-info-1"}
     =render "layouts/application/default_cliq_dropdown"
