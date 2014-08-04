@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 ruby "2.1.1"
 gem "rails", "4.1.1"
+gem 'rails_12factor', group: :production
 
 # Use PostgreSQL as the database for Active Record
 gem "pg", :require => "pg"
