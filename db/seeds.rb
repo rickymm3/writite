@@ -1,7 +1,3 @@
-User.create!([
-  {email: "rickymm32@gmail.com", encrypted_password: "$2a$10$lKphUUCTnrb4wesBbMHTGuy3He1kGwMXDpUkUxZdcFXL/auwq1c/G", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2014-07-18 16:16:10", last_sign_in_at: "2014-07-18 16:16:10", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", username: "rickymm32"},
-  {email: "rickymm3@gmail.com", encrypted_password: "$2a$10$Uf8vz9Xnf15zVk66jOmbwOD9kA1UvNXOPmU1eNMRRrPiUcfxSkMGW", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: "2014-07-29 02:48:24", sign_in_count: 7, current_sign_in_at: "2014-07-29 02:48:24", last_sign_in_at: "2014-07-28 17:12:41", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", username: "rickymm3"}
-])
 Cliq.create!([
   {parent_id: nil, name: "sports", is_category: true, ancestry: "1"},
   {parent_id: nil, name: "cliq", is_category: false, ancestry: nil},
