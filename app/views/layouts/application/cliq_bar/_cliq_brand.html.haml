@@ -5,7 +5,7 @@
   %span.icon-bar
   %span.icon-bar
 %ul
-  %li.cliq-info-hover{ data:{cliq_id:1}, style:"list-style-type:none"}
+  %li.cliq-info-hover{ data:{cliq_id:@cliq.ancestors.first.id}, style:"list-style-type:none"}
     %a.navbar-brand{href:"/"}
       Cliq!
     =render "shared/cliq_info"
