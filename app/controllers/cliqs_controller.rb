@@ -28,11 +28,10 @@ class CliqsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_cliq
     if params[:id]
-      cliq = params[:id]
+      @cliq = Cliq.find(params[:id])
     else
-      cliq = 1
+      @cliq = Cliq.where(is_main:true).first
     end
-    @cliq = Cliq.find(cliq)
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
