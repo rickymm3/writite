@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def load_index
+    @top_cliq = Cliq.where(is_main:true).first
     @categories = Cliq.where(is_category: true)
   end
 

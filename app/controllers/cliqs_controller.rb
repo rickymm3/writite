@@ -19,18 +19,38 @@ class CliqsController < ApplicationController
   end
 
   def new
+    @top_cliq = Cliq.where(is_main:true).first
     current_cliq = Cliq.find(params[:cliq_id])
     @cliq = Cliq.new(name:params[:new], parent: current_cliq)
     @create = true
   end
 
+  def create
+    cliq = Cliq.find(params[:cliq][:parent_id])
+    if params[:cliq][:is_category] == '1'
+      @newcliq = cliq.children.create name: params[:cliq][:title].downcase, is_category: true
+    else
+      @newcliq = cliq.children.create name: params[:cliq][:title].downcase
+    end
+
+    respond_to do |format|
+      if @newcliq
+        format.html { redirect_to @newcliq, notice: 'Cliq was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @newcliq }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @newcliq.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_cliq
-    if params[:id]
+    if params[:id] || params[:id] == @top_cliq.id
       @cliq = Cliq.find(params[:id])
     else
-      @cliq = Cliq.where(is_main:true).first
+      @cliq = @top_cliq
     end
   end
 

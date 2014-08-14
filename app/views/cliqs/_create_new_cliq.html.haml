@@ -15,4 +15,4 @@
             %span.carrot
           %i.fa.fa-angle-right
     %li
-      = link_to @search['temp'].name, '#'
+      = link_to @search['temp'].name, new_cliq_path( cliq_id: @cliq.id, new:@search['temp'].name )

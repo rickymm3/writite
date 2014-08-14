@@ -1,0 +1,8 @@
+= form_for @cliq do |f|
+  =f.hidden_field :parent_id, value: @cliq.parent.id
+  =f.hidden_field :title, value: @cliq.name
+  =f.label :is_category?
+  %br
+  =f.check_box :is_category
+  %div.actions
+    =f.submit
