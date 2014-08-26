@@ -59,3 +59,4 @@ gem "therubyracer"
 gem 'will_paginate', '~> 3.0'
 gem 'ancestry'
 gem 'seed_dump'
+gem 'cancancan'

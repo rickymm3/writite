@@ -1,11 +1,12 @@
-%nav.navbar.navbar-default{role:'navigation'}
-  .container-fluid
-    .navbar-header
-      =render "layouts/application/cliq_bar/cliq_brand"
+.container#page-top-margin
+  %nav.navbar.navbar-default{role:'navigation'}
+    .container-fluid
+      .navbar-header
+        =render "layouts/application/cliq_bar/cliq_brand"
 
-    %div.collapse.navbar-collapse#navbar-collapse-1
-      %ul.nav.navbar-nav
-        =render "layouts/application/cliq_bar/cliq_history" if @cliq
-        =render "layouts/application/cliq_bar/cliq_search" if @cliq.present? && @create != true
-      %ul.nav.navbar-nav.navbar-right
-        =render "layouts/application/cliq_bar/account"
+      %div.collapse.navbar-collapse#navbar-collapse-1
+        %ul.nav.navbar-nav
+          =render "layouts/application/cliq_bar/cliq_history" if @cliq
+          =render "layouts/application/cliq_bar/cliq_search" if @cliq.present? && @create != true
+        %ul.nav.navbar-nav.navbar-right
+          =render "layouts/application/cliq_bar/account"

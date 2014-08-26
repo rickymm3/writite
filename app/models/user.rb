@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true, if: -> { self.username.present? }
 
   has_and_belongs_to_many :roles
+  delegate :can?, :cannot?, :to => :ability
+
 
   def role?(role)
     return !!self.roles.find_by_name(role.to_s)
