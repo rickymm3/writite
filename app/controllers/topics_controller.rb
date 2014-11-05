@@ -2,6 +2,8 @@ class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
   before_action :set_cliq, only: [:new, :show, :create]
   before_action :get_replies, only: [:show]
+  before_action :authenticate_user!, :only => [:new, :create]
+
 
   def show
     @topics = Topic.find(params[:id])
