@@ -1,4 +1,3 @@
-%h1 Topics#new
-%p Find me in app/views/topics/new.html.haml
-=@topic.cliq.name
-=render "form"
+.well.well-sm
+  %h5="Create new topic in: #{@topic.cliq.name.capitalize}"
+  =render "form"

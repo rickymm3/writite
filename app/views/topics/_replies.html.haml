@@ -1,0 +1,9 @@
+-@replies.each do |reply|
+  .well
+    %br
+    =reply.body.html_safe
+    .text-right
+      %br
+      ="by: #{reply.user.username}"
+      .btn.btn-default
+        Quote

@@ -1,23 +1,20 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
-  before_action :set_cliq, only: [:new]
-
-  def index
-    @topics = Topic.limit(10).order(:created_at)
-  end
+  before_action :set_cliq, only: [:new, :show, :create]
+  before_action :get_replies, only: [:show]
 
   def show
+    @topics = Topic.find(params[:id])
   end
 
   def create
     @topic = Topic.new(topic_params)
     @topic.cliq_id = params['cliq_id']
     @topic.user_id = current_user.id
-    @cliq = Cliq.find(params['cliq_id'])
     @cliq.touch
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to [@topic.cliq, @topic], notice: 'Item was successfully created.' }
+        format.html { redirect_to @topic.cliq, notice: 'Item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @topic }
       else
         format.html { render action: 'new' }
@@ -28,7 +25,6 @@ class TopicsController < ApplicationController
   end
 
   def new
-    @create = true
     @topic = Topic.new(cliq_id: params[:cliq_id])
   end
 
@@ -40,10 +36,17 @@ class TopicsController < ApplicationController
 
   private
 
+  def get_replies
+    @replies = @topic.replies
+  end
+
   def set_cliq
-    @cliq = Cliq.find(params[:cliq_id])
-    @ancestors = @cliq.ancestors
-    @cliq_ancestors = @ancestors << @cliq
+    if @topic
+      @cliq = Cliq.find(@topic.cliq_id)
+      @ancestors = @cliq.ancestors
+    else
+      @cliq = Cliq.find(params[:cliq_id])
+      end
   end
 
   def set_topic

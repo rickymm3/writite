@@ -7,6 +7,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require ckeditor-jquery
+//= require_tree ./ckeditor
 // //= require_tree .
 
 $( document ).ready(function() {
@@ -18,4 +20,18 @@ $( document ).ready(function() {
         $(string).toggle()
     });
 
+    $('.ckeditor').ckeditor({
+        // optional config
+    });
+
+    $('.cliq-small').hover(
+        function() {
+            var inner = $(this).find('.cliq-hidden')
+            inner.addClass('cliq-active')
+        }, function() {
+            var inner = $(this).find('.cliq-hidden')
+            inner.removeClass('cliq-active')
+    });
+
 });
+

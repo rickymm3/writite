@@ -1,11 +1,10 @@
+-if @create == true
+  -@cliq = Cliq.find(@cliq.parent_id)
 -full_ancestry(@cliq).each do |desc|
-  -unless desc.name == 'cliq' || desc.id.blank?
-    %li.cliq-info-hover{data:{cliq_id:desc.id}}
-      =render "shared/cliq", desc: desc
-      =render "shared/cliq_info", cliq:desc
--if @cliq.id.blank?
-  %li
-    =link_to '#' do
-      %span.cliq-btn
-        =@cliq.name.capitalize
-
+  -unless desc == @top_cliq
+    %li.dropdown
+      %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+        =render "shared/cliq", desc: desc
+        %span.caret
+      %ul.dropdown-menu{role:'menu'}
+        =render "shared/cliq_info", cliq:desc

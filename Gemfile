@@ -1,5 +1,4 @@
 source "https://rubygems.org"
-ruby "2.1.1"
 gem "rails", "4.1.1"
 gem 'rails_12factor', group: :production
 
@@ -22,10 +21,12 @@ gem "omniauth-facebook"
 gem "kaminari"
 gem "ransack"
 gem "dynamic_form"
+gem 'simple_form'
+gem 'ckeditor_rails'
+gem 'friendly_id'
 
 group :test, :development do
   gem "rspec-rails"
-  gem "debugger"
   gem "awesome_print"
 end
 

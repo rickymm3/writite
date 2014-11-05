@@ -1,14 +1,11 @@
-= form_for [@topic.cliq, @topic] do |f|
-
+=simple_form_for [@topic.cliq, @topic] do |f|
   %div.field
-    = f.label :subject
+    =f.label :subject
+    =f.text_field :subject, class: "form-control"
     %br
-    = f.text_field :subject
+    =f.label :body
 
-  %div.field
-    = f.label :body
-    %br
-    = f.text_field :body
-
-  %div.actions
-    =f.submit
+    =f.text_area :body, :class => 'ckeditor'
+  %div.actions.well
+    .pull-right
+      =f.submit 'Create!',  class: "btn btn-default"

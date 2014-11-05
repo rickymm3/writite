@@ -1,15 +1,1 @@
-.search
-  -if @search['temp'] && user_signed_in?
-    =render 'create_new_cliq'
-  -elsif !user_signed_in?
-    =render 'sign_in_to_create_cliq'
-  -if @search['results']
-    =render 'similar_searches'
-
-%ul
-  -@topics.each do |t|
-    %li
-      =t.subject
-      =" ----- "
-      -t.cliq.ancestors.each do |desc|
-        =desc.name
+=render "cliq_body/cliq_body", topics: @topics

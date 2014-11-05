@@ -1,0 +1,4 @@
+.cliq-container
+  -ancestors.each_with_index do |cliq, i|
+    -if i == ancestors.size - 1
+      =link_to cliq.name.capitalize, cliq_path(cliq), class: 'btn btn-default cliq-active'

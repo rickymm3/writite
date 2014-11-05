@@ -1,0 +1,11 @@
+%h2
+  =@topic.subject
+.well
+  %br
+  =@topic.body.html_safe
+  .text-right
+    %br
+    ="by: #{@topic.user.username}"
+    .btn.btn-default
+      Quote
+

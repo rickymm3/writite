@@ -1,0 +1,17 @@
+%table.table.table-striped
+  %thead
+    %tr
+      %th
+        Subject
+      %th
+        Interest
+      %th
+        Category
+  %tbody
+    -topics.each do |t|
+      %tr
+        %td
+          =link_to t.subject, topic_path(t)
+        %td
+        %td
+          =generate_cliq_history(t.cliq)

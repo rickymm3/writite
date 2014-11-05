@@ -1,9 +1,1 @@
-%ul.topics
-  -@topics.each do |t|
-    %li
-      =t.subject
-      =" - "
-      -ancestors = t.cliq.ancestors
-      -ancestors << t.cliq
-      -ancestors.each do |desc|
-        =desc.name
+=render "cliq_body/cliq_body", topics: @topics

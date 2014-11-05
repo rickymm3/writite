@@ -3,6 +3,9 @@ BaseApp::Application.routes.draw do
   resources :cliqs do
     resources :topics
   end
+  resources :topics do
+    resources :replies
+  end
 
   root :to => "cliqs#index"
 

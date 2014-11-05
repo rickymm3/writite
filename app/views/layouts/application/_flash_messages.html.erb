@@ -1,7 +1,15 @@
 <% if notice %>
-  <div class="alert alert-success"><%= notice %></div>
+  <div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <%= notice %>
+  </div>
 <% end %>
 
 <% if alert %>
-  <div class="alert alert-error"><p><%= alert %></p></div>
+  <div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    <%= alert %>
+  </div>
 <% end %>
+
+
