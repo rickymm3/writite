@@ -8,8 +8,7 @@ module ApplicationHelper
   end
 
   def full_ancestry(cliq)
-    ancestors = cliq.ancestors
-    ancestors << cliq
+    cliq.ancestors << cliq
   end
 
 end

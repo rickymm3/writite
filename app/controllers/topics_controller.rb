@@ -14,7 +14,7 @@ class TopicsController < ApplicationController
     @topic.cliq_id = params['cliq_id']
     @topic.user_id = current_user.id
     @cliq.touch
-    respond_to do |format| 
+    respond_to do |format|
       if @topic.save
         format.html { redirect_to @topic.cliq, notice: 'Item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @topic }

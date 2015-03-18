@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141027175703) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cliqs", force: true do |t|
+  create_table "cliqs", force: :cascade do |t|
     t.integer  "parent_id"
     t.string   "name",                        null: false
     t.boolean  "is_category", default: false
@@ -28,14 +28,14 @@ ActiveRecord::Schema.define(version: 20141027175703) do
 
   add_index "cliqs", ["ancestry"], name: "index_cliqs_on_ancestry", using: :btree
 
-  create_table "colors", force: true do |t|
+  create_table "colors", force: :cascade do |t|
     t.string   "name"
     t.string   "color_hex"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "favorites", force: true do |t|
+  create_table "favorites", force: :cascade do |t|
     t.integer  "parent_id"
     t.integer  "user_id"
     t.integer  "cliq_id"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20141027175703) do
     t.datetime "updated_at"
   end
 
-  create_table "followings", force: true do |t|
+  create_table "followings", force: :cascade do |t|
     t.integer  "parent_id"
     t.integer  "user_id"
     t.integer  "topic_id"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20141027175703) do
     t.datetime "updated_at"
   end
 
-  create_table "posts", force: true do |t|
+  create_table "posts", force: :cascade do |t|
     t.integer  "topic_id"
     t.integer  "user_id"
     t.text     "body"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20141027175703) do
     t.datetime "updated_at"
   end
 
-  create_table "replies", force: true do |t|
+  create_table "replies", force: :cascade do |t|
     t.integer  "topic_id"
     t.integer  "user_id"
     t.text     "body"
@@ -67,18 +67,18 @@ ActiveRecord::Schema.define(version: 20141027175703) do
     t.datetime "updated_at"
   end
 
-  create_table "roles", force: true do |t|
+  create_table "roles", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "roles_users", id: false, force: true do |t|
+  create_table "roles_users", id: false, force: :cascade do |t|
     t.integer "role_id"
     t.integer "user_id"
   end
 
-  create_table "topics", force: true do |t|
+  create_table "topics", force: :cascade do |t|
     t.text     "subject"
     t.text     "body"
     t.integer  "user_id"
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 20141027175703) do
 
   add_index "topics", ["slug"], name: "index_topics_on_slug", unique: true, using: :btree
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

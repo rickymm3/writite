@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-gem "rails", "4.1.1"
+gem "rails", "4.2"
 gem 'rails_12factor', group: :production
 
 # Use PostgreSQL as the database for Active Record
@@ -15,8 +15,7 @@ gem "coffee-rails", "~> 4.0.0"
 gem "jquery-rails"
 
 # User authentication
-gem "devise", "3.2.4"
-
+gem 'devise', :git => 'https://github.com/plataformatec/devise.git', :branch => 'lm-rails-4-2'
 gem "omniauth-facebook"
 gem "kaminari"
 gem "ransack"
