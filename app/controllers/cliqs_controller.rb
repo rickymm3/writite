@@ -1,21 +1,25 @@
 class CliqsController < ApplicationController
   before_action :set_cliq, only: [:index, :show, :edit, :update, :destroy]
+  before_action :set_search, only: [:index, :show]
+  before_action :set_filter, only: [:index, :show]
   before_action :authenticate_user!, :except => [:index, :show]
 
   def index
-    @search = params[:search] if params[:search]
     @descendants = @cliq.descendants.select(:id).order("updated_at desc").limit(10).collect(&:id)
     @descendants << @cliq.id
     @topics = Topic.where(cliq_id: @descendants).order("updated_at desc").limit(10)
   end
 
   def show
-    set_search(params[:search])
     unless @search['temp']
       @descendants = @cliq.descendants.select(:id).order("updated_at desc").limit(10).collect(&:id)
       @descendants << @cliq.id
     end
-    @topics = Topic.where(cliq_id: @descendants).order("updated_at desc").limit(10)
+    if @filter
+      @topics = Topic.where(cliq_id: @descendants).order("exp desc").limit(10)
+    else
+      @topics = Topic.where(cliq_id: @descendants).order("updated_at desc").limit(10)
+    end
   end
 
   def new
@@ -45,6 +49,11 @@ class CliqsController < ApplicationController
   end
 
   private
+
+  def set_filter
+    @filter = params[:filter] if params[:filter]
+  end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_cliq
     if params[:id] || params[:id] == @top_cliq.id
@@ -59,11 +68,11 @@ class CliqsController < ApplicationController
     params.require(:cliq).permit(:subject, :body, :user_id)
   end
 
-  def set_search(search)
+  def set_search
     @search = {'match' => nil}
-    @search = Cliq.search(search, @cliq) if params[:search]
+    @search = Cliq.search(params[:search], @cliq) if params[:search]
     #automatically return the correct search if it matches
-    redirect_to(@search['match']) if @search['match'].present?
+    # redirect_to(@search['match']) if @search['match'].present?
   end
 
 end

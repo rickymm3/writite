@@ -1,0 +1,8 @@
+=simple_form_for [@topic, @reply] do |f|
+  %div.field
+    %br
+    =f.label :body
+    =f.text_area :body, :class => 'ckeditor'
+  %div.actions.well
+    .pull-right
+      =f.submit 'Reply!',  class: "btn btn-default"

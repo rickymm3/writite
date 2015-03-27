@@ -4,7 +4,7 @@
   -unless desc == @top_cliq
     %li.dropdown
       %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-        =render "shared/cliq", desc: desc
+        =desc.name.capitalize
         %span.caret
       %ul.dropdown-menu{role:'menu'}
         =render "shared/cliq_info", cliq:desc

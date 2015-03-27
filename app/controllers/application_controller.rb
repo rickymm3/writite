@@ -23,4 +23,17 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def edit_permissions(id, tr)
+    if id && tr && current_user
+      if tr == 'reply'
+          x = Reply.find(id)
+      elsif tr == 'topic'
+          x = Topic.find(id)
+      end
+    end
+    unless current_user.id == x.user_id
+      redirect_to "/pages/not_authorized"
+    end
+  end
+
 end

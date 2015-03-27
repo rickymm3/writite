@@ -34,6 +34,15 @@ class TopicsController < ApplicationController
   end
 
   def edit
+    edit_permissions(params['id'], 'topic')
+  end
+
+  def update
+    if @topic.update(topic_params)
+      redirect_to @topic, notice: 'Reply was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   private

@@ -10,8 +10,6 @@
     <data-source name="Rails cliq-social: cucumber" uuid="0ce92918-1e57-4b9e-8618-bc70c02de777">
       <user-name>Ricky</user-name>
     </data-source>
-    <data-source name="Rails cliq-social: production" uuid="7278f50d-e770-41ff-9219-c36fd1f453e0">
-      <secret-storage>memory</secret-storage>
-    </data-source>
+    <data-source name="Rails cliq-social: production" uuid="7278f50d-e770-41ff-9219-c36fd1f453e0" />
   </component>
 </project>

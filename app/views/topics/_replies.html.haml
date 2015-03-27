@@ -1,9 +1,7 @@
 -@replies.each do |reply|
   .well
+    =render "top_settings", topicreply:reply
     %br
     =reply.body.html_safe
-    .text-right
-      %br
-      ="by: #{reply.user.username}"
-      .btn.btn-default
-        Quote
+
+

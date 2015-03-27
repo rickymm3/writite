@@ -1,6 +1,7 @@
 -cliq ||= false
 -if cliq
-  %li=link_to cliq.ancestors.last.name.capitalize, cliq.ancestors.last
+  %li
+    =link_to "Go back: #{cliq.name.capitalize}", cliq
   %li.divider
   -cliq_latest = Cliq.cliq_latest(cliq)
   -if cliq_latest.count > 0

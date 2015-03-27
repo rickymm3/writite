@@ -1,2 +1,5 @@
 %h1 Topics#edit
 %p Find me in app/views/topics/edit.html.haml
+.well.well-sm
+  %h5="Edit reply in: #{@topic.cliq.name.capitalize}"
+  =render "form"

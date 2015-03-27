@@ -3,6 +3,7 @@ BaseApp::Application.routes.draw do
   resources :cliqs do
     resources :topics
   end
+
   resources :topics do
     resources :replies
   end
@@ -15,5 +16,7 @@ BaseApp::Application.routes.draw do
   namespace "admin" do
     resources :users
   end
+
+  get "pages/not_authorized"
 
 end
