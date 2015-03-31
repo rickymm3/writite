@@ -4,6 +4,8 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require_tree .
+ *= require jquery.minicolors
+
 */
 .top48 {
     margin-top: 48px;
@@ -44,4 +46,23 @@ ul {
     margin-top: 50px;
     height: auto;
     position: absolute;
+}
+
+.label-custom1{
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 100%;
+    font-weight: bold;
+    line-height: 1;
+    color: black;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.category-list {
+    float:left;
+    padding-left: 10px!important;
+    padding-bottom: 10px;
 }

@@ -11,19 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150330195318) do
+ActiveRecord::Schema.define(version: 20150331200855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cliqs", force: :cascade do |t|
     t.integer  "parent_id"
-    t.string   "name",                        null: false
+    t.string   "name",                           null: false
     t.boolean  "is_category", default: false
     t.string   "ancestry"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_main"
+    t.string   "color",       default: "ffffff"
   end
 
   add_index "cliqs", ["ancestry"], name: "index_cliqs_on_ancestry", using: :btree

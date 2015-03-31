@@ -1,0 +1,4 @@
+=render "cliqs/cliq_body/search_results", search: @search ||= {}
+=render "cliqs/cliq_body/info_bar"
+-unless @search.has_key?('temp')
+ =render "cliqs/cliq_body/topic_list", topics: @topics

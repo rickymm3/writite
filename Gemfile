@@ -13,6 +13,7 @@ gem "coffee-rails", "~> 4.0.0"
 
 # Use jQuery as the JavaScript library
 gem "jquery-rails"
+gem 'jquery-minicolors-rails'
 
 # User authentication
 gem 'devise', :git => 'https://github.com/plataformatec/devise.git', :branch => 'lm-rails-4-2'
