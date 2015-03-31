@@ -16,6 +16,7 @@ BaseApp::Application.routes.draw do
   namespace "admin" do
     resources :users
   end
+  resources :users, only: [:show]
 
   get "pages/not_authorized"
 
