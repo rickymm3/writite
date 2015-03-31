@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7bb112c-0db7-4039-a844-7816565e2298" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/application/cliq_bar/_categories.html.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/cliq_body/_cliq_body.html.haml" afterPath="$PROJECT_DIR$/app/views/cliqs/cliq_body/_cliq_body.html.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/cliq_body/_filter_list.html.haml" afterPath="$PROJECT_DIR$/app/views/cliqs/cliq_body/_filter_list.html.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/cliq_body/_info_bar.html.haml" afterPath="$PROJECT_DIR$/app/views/cliqs/cliq_body/_info_bar.html.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/cliq_body/_new_thread.html.haml" afterPath="$PROJECT_DIR$/app/views/cliqs/cliq_body/_new_thread.html.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/cliq_body/_search_results.html.haml" afterPath="$PROJECT_DIR$/app/views/cliqs/cliq_body/_search_results.html.haml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/cliq_body/_topic_list.html.haml" afterPath="$PROJECT_DIR$/app/views/cliqs/cliq_body/_topic_list.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_cliq.html.haml" afterPath="$PROJECT_DIR$/app/views/shared/_cliq.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application/_cliq_bar.html.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application/_cliq_bar.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application/cliq_bar/_cliq_brand.html.haml" afterPath="$PROJECT_DIR$/app/views/layouts/application/cliq_bar/_cliq_brand.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/cliqs/_new_form.html.haml" afterPath="$PROJECT_DIR$/app/views/cliqs/_new_form.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/cliqs/index.html.haml" afterPath="$PROJECT_DIR$/app/views/cliqs/index.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/cliqs/show.html.haml" afterPath="$PROJECT_DIR$/app/views/cliqs/show.html.haml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cliq-social.iws" />
@@ -75,16 +58,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20150330195318_add_is_admin_to_users.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20150330195318_add_is_admin_to_users.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="new.html.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/cliqs/new.html.haml">
           <provider selected="true" editor-type-id="text-editor">
@@ -135,11 +108,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9112426" vertical-offset="513" max-vertical-offset="1095">
+            <state vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="1095">
               <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3709428" vertical-offset="0" max-vertical-offset="647">
+              <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -158,7 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/db/migrate/20150324165305_add_exp_to_topic.rb" />
         <option value="$PROJECT_DIR$/app/views/topics/index.html.haml" />
         <option value="$PROJECT_DIR$/app/views/cliq_body/_new_thread.html.haml" />
         <option value="$PROJECT_DIR$/app/views/cliq_body/_cliq_body.html.haml" />
@@ -209,6 +191,7 @@
         <option value="$PROJECT_DIR$/app/views/shared/_cliq.html.haml" />
         <option value="$PROJECT_DIR$/app/views/layouts/application/cliq_bar/_categories.html.haml" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -472,7 +455,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="SearchEverywhereHistoryKey" value="gemfile&#9;FILE&#9;file:///Users/Ricky/Documents/code/cliq/cliq-rails/Gemfile&#10;routes&#9;FILE&#9;file:///Users/Ricky/Documents/code/cliq/cliq-rails/config/routes.rb&#10;registrations&#9;null&#9;null&#10;gemf&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/Gemfile&#10;new&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/app/views/cliq_body/_new_thread.html.haml&#10;topic_li&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/app/views/cliq_body/_topic_list.html.haml&#10;new_threa&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/app/views/cliq_body/_new_thread.html.haml&#10;history&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/app/views/cliqs/_history.html.haml&#10;similar_&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/app/views/cliqs/_similar_searches.html.haml&#10;gem&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/Gemfile&#10;route&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/config/routes.rb&#10;application.&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/app/assets/stylesheets/application.css" />
+    <property name="SearchEverywhereHistoryKey" value="gitignore&#9;FILE&#9;file:///Users/Ricky/Documents/code/cliq/cliq-rails/.gitignore&#10;gemfile&#9;FILE&#9;file:///Users/Ricky/Documents/code/cliq/cliq-rails/Gemfile&#10;routes&#9;FILE&#9;file:///Users/Ricky/Documents/code/cliq/cliq-rails/config/routes.rb&#10;registrations&#9;null&#9;null&#10;gemf&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/Gemfile&#10;new&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/app/views/cliq_body/_new_thread.html.haml&#10;topic_li&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/app/views/cliq_body/_topic_list.html.haml&#10;new_threa&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/app/views/cliq_body/_new_thread.html.haml&#10;history&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/app/views/cliqs/_history.html.haml&#10;similar_&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/app/views/cliqs/_similar_searches.html.haml&#10;gem&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/Gemfile&#10;route&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/config/routes.rb&#10;application.&#9;FILE&#9;file:///Users/rmason202/Code/cliq-social/app/assets/stylesheets/application.css" />
     <property name="FullScreen" value="false" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="options.lastSelected" value="editor.preferences.appearance" />
@@ -699,7 +682,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297568" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22585438" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22585438" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -742,13 +725,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/replies/edit.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="150">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/not_authorized.html.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="494">
@@ -1126,8 +1102,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9112426" vertical-offset="513" max-vertical-offset="1095">
+        <state vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="1095">
           <caret line="65" column="32" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3709428" vertical-offset="0" max-vertical-offset="647">
+          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
           <folding />
         </state>
       </provider>
