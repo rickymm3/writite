@@ -11,4 +11,8 @@ module ApplicationHelper
     cliq.ancestors << cliq
   end
 
+  def facebook_image(uid)
+    "http://graph.facebook.com/#{uid}/picture"
+  end
+
 end

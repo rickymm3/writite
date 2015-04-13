@@ -24,6 +24,7 @@ gem "dynamic_form"
 gem 'simple_form'
 gem 'ckeditor_rails'
 gem 'friendly_id'
+gem 'figaro'
 
 group :test, :development do
   gem "rspec-rails"
@@ -61,3 +62,4 @@ gem 'will_paginate', '~> 3.0'
 gem 'ancestry'
 gem 'seed_dump'
 gem 'cancancan'
+gem 'pry'

@@ -7,6 +7,10 @@
     .col-sm-4
       = f.email_field :email, :type => :email, :class => "form-control", :placeholder => "Enter your email"
   .form-group
+    = f.label :username, :class => "col-sm-2 control-label"
+    .col-sm-4
+      = f.email_field :username, :type => :username, :class => "form-control", :placeholder => "Enter your username"
+  .form-group
     = f.label :password, :class => "col-sm-2 control-label"
     .col-sm-4
       = f.password_field :password, :class => "form-control", :placeholder => "Password"

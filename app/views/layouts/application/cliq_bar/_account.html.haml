@@ -5,6 +5,7 @@
       %i.fa.fa-caret-down
   - if current_user.admin?
     %li= link_to "Admin", admin_path
+  %li= image_tag(facebook_image(current_user.uid))
   %li= link_to "Sign out", destroy_user_session_path
 -else
   %li= link_to "Sign up", new_user_registration_path
