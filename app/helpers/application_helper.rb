@@ -20,4 +20,10 @@ module ApplicationHelper
     "http://graph.facebook.com/#{uid}/picture"
   end
 
+  def user_owned?
+    if current_user
+      current_user.id == @story.user_id
+    end
+  end
+
 end

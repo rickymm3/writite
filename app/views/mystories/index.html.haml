@@ -1,8 +1,10 @@
-.well
-  %h3 Your Stories:
-  -if @stories
+-if @stories
+  .well
+    %h3 Your Stories:
     %ul
       -@stories.each do |story|
-        =link_to story.title, mystory_url(story)
-.well
-  =link_to "Create a New Story", new_mystory_path
+        %li=link_to story.title, mystory_url(story)
+  .well
+    =link_to "Create a New Story", new_mystory_path
+-else
+  =render "shared/must_sign_in"

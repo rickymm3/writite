@@ -1,7 +1,10 @@
 class MystoriesController < ApplicationController
+  before_action :authenticate_user!, only: [:new,:create,:edit]
 
   def index
-    @stories = Mystory.where(:user_id => current_user.id)
+    if user_signed_in?
+      @stories = Mystory.where(:user_id => current_user.id)
+    end
   end
 
   def new
@@ -11,7 +14,7 @@ class MystoriesController < ApplicationController
 
   def show
     @story = Mystory.find(params[:id])
-    @chapters = Chapter.where(mystory_id: @story.id)
+    @chapters = Chapter.where(mystory_id: @story.id).order(:created_at)
   end
 
   def create

@@ -11,16 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413212418) do
+ActiveRecord::Schema.define(version: 20150414133021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "chapters", force: :cascade do |t|
-    t.integer "mystory_id"
-    t.text    "chapter_text"
-    t.integer "number"
-    t.string  "title"
+    t.integer  "mystory_id"
+    t.text     "chapter_text"
+    t.integer  "number"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "languages", force: :cascade do |t|
