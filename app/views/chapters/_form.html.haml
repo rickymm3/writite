@@ -3,7 +3,7 @@
   %div.field
     %br
     =f.input :title
-    =f.label "Chapter #{current_chapter(@chapters)}"
+    =f.label "Chapter #{new_chapter_number(@story)}"
     =f.text_area :chapter_text, class: 'ckeditor'
   %div.actions.well
     .pull-right

@@ -7,8 +7,8 @@ module ApplicationHelper
     link_to title, { :sort => column, :direction => direction }, { :class => css_class }
   end
 
-  def current_chapter(chapters)
-    "#{chapters.count + 1}"
+  def new_chapter_number(story)
+    Chapter.where(mystory_id: story.id).count + 1
   end
 
   def next_chapter(story, chapter_number)

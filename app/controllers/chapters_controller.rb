@@ -1,5 +1,5 @@
 class ChaptersController < ApplicationController
-  before_action :set_story, only: [:new, :show]
+  before_action :set_story, only: [:new, :show, :create]
 
   def index
     @next_chapter = next_chapter(@story, @chapter.number)
@@ -18,11 +18,11 @@ class ChaptersController < ApplicationController
   def create
     @chapter = Chapter.create(chapter_text: params[:chapter][:chapter_text],
                             mystory_id: params[:mystory_id],
-                            number: current_chapter(Chapter.where(mystory_id:params[:chapter][:mystory_id])),
+                            number: new_chapter_number(@story),
                             title: params[:chapter][:title])
     respond_to do |format|
       if @chapter.save
-        format.html { redirect_to @story, notice: 'Item was successfully created.' }
+        format.html { redirect_to mystory_chapter_path(@chapter.mystory, @chapter), notice: 'Item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @chapter }
       else
         format.html { render action: 'new' }
