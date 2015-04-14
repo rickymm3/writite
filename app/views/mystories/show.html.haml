@@ -7,3 +7,4 @@
     -@chapters.each do |chapter|
       %li=link_to "Chapter #{chapter.number}: #{chapter.title}", mystory_chapter_path(@story, chapter)
   =link_to "+ Add a Chapter", new_mystory_chapter_path(@story)
+=render "shared/disqus"

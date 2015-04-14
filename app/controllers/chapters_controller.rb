@@ -1,5 +1,6 @@
 class ChaptersController < ApplicationController
   before_action :set_story, only: [:new, :show, :create]
+  before_action :check_owner, only: [:new, :create]
 
   def index
     @next_chapter = next_chapter(@story, @chapter.number)
@@ -32,6 +33,13 @@ class ChaptersController < ApplicationController
   end
 
   private
+
+  def check_owner
+    unless @story.user_id == current_user.id
+      # head is equivalent to a rendering
+      render :status => :forbidden, :text => "You do not have access to this action"
+    end
+  end
 
   def set_story
     @story = Mystory.find(params[:mystory_id])

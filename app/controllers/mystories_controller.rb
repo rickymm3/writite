@@ -1,4 +1,5 @@
 class MystoriesController < ApplicationController
+
   def index
     @stories = Mystory.where(:user_id => current_user.id)
   end
@@ -27,6 +28,15 @@ class MystoriesController < ApplicationController
         format.html { render action: 'new' }
         format.json { render json: @story.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  private
+
+  def check_owner
+    unless @story.user_id == current_user.id
+      # head is equivalent to a rendering
+      render :status => :forbidden, :text => "You do not have access to this action"
     end
   end
 
