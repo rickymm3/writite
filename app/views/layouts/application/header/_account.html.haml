@@ -1,0 +1,24 @@
+-if user_signed_in?
+  %li.dropdown
+    %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+      -if current_user.fbname
+        =current_user.fbname
+      -else
+        =current_user.email.capitalize
+      %span.caret
+    %ul.dropdown-menu{role:"menu"}
+      %li= link_to "Edit", edit_user_registration_path
+      - if current_user.admin?
+        %li= link_to "Admin", admin_path
+      %li= link_to "Sign out", destroy_user_session_path
+  %li= image_tag(facebook_image(current_user.uid)) if current_user.provider
+
+-else
+  %li.dropdown
+    %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+      Account
+      %span.caret
+    %ul.dropdown-menu{:role => "menu"}
+      %li= link_to "Sign up", new_user_registration_path
+      %li= link_to "Sign in", new_user_session_path
+      %li= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)

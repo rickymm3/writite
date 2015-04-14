@@ -1,0 +1,10 @@
+%h1=@story.title
+=simple_form_for [@story, @chapter] do |f|
+  %div.field
+    %br
+    =f.input :title
+    =f.label "Chapter #{current_chapter(@chapters)}"
+    =f.text_area :chapter_text, class: 'ckeditor'
+  %div.actions.well
+    .pull-right
+      =f.submit 'Add Chapter!',  class: "btn btn-default"

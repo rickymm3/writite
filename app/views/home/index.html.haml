@@ -1,0 +1,4 @@
+.well
+  %h5 Featured Stories
+  -@featured.each do |feature|
+    =link_to feature.title, mystory_path(feature)

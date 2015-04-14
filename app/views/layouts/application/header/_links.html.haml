@@ -1,0 +1,29 @@
+%li.dropdown
+  %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+    Discover
+    %span.caret
+  %ul.dropdown-menu{:role => "menu"}
+    %li
+      %a{:href => "#"} Another action
+    %li
+      %a{:href => "#"} Something else here
+    %li.divider
+    %li
+      %a{:href => "#"} Separated link
+    %li.divider
+%li
+  =link_to "Create", mystories_path
+  %span.sr-only (current)
+%li.dropdown
+  %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+    Community
+    %span.caret
+  %ul.dropdown-menu{:role => "menu"}
+    %li
+      %a{:href => "#"} Another action
+    %li
+      %a{:href => "#"} Something else here
+    %li.divider
+    %li
+      %a{:href => "#"} Separated link
+    %li.divider

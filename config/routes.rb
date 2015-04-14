@@ -1,14 +1,15 @@
 BaseApp::Application.routes.draw do
 
-  resources :cliqs do
-    resources :topics
+  resources :mystories do
+    resources :chapters
   end
 
-  resources :topics do
-    resources :replies
-  end
 
-  root :to => "cliqs#index"
+  # resources :topics do
+  #   resources :replies
+  # end
+
+  root :to => "home#index"
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

@@ -16,9 +16,9 @@ describe TopicsController do
     end
   end
 
-  describe "GET 'create'" do
+  describe "GET 'mystories'" do
     it "returns http success" do
-      get 'create'
+      get 'mystories'
       response.should be_success
     end
   end

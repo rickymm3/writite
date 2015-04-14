@@ -6,14 +6,10 @@ class User < ActiveRecord::Base
 
   devise :omniauthable
 
-  validates :username, presence: true
-  validates :username, uniqueness: true, if: -> { self.username.present? }
-
   has_and_belongs_to_many :roles
   delegate :can?, :cannot?, :to => :ability
 
-  has_many :topics
-  has_many :replies
+  has_many :creates
 
   def role?(role)
     return !!self.roles.find_by_name(role.to_s)
@@ -36,7 +32,7 @@ class User < ActiveRecord::Base
     if user = User.find_by_email(data["email"])
       user
     else # Create a user with a stub password.
-      User.create!(uid: auth['uid'], provider: auth['provider'], :email => data["email"], :password => Devise.friendly_token[0,20], username: "nil")
+      User.create!(fbname: data['name'], uid: auth['uid'], provider: auth['provider'], :email => data["email"], :password => Devise.friendly_token[0,20])
     end
   end
 

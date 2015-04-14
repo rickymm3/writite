@@ -1,0 +1,12 @@
+=simple_form_for [@story] do |f|
+  %div.field
+    %br
+    =f.input :title
+    =f.input :description, as: :text
+    =f.label :language
+    = f.collection_select :language, @language, :id, :language, :prompt => "Select a Language"
+    =f.input :mature, as: :radio_buttons
+  -#=f.text_area :description, :class => 'ckeditor'
+  %div.actions.well
+    .pull-right
+      =f.submit 'Reply!',  class: "btn btn-default"

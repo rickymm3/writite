@@ -1,0 +1,11 @@
+%h1=@story.title
+%h5="Chapter #{@chapter.number}: #{@chapter.title}"
+
+.well
+  =@chapter.chapter_text.html_safe
+.well
+  -if @next_chapter
+    =link_to "Chapter #{@chapter.number + 1}", mystory_chapter_path(@story, @next_chapter)
+  -else
+    The End
+    =link_to "Back to Index", mystory_path(@story)

@@ -7,8 +7,13 @@ module ApplicationHelper
     link_to title, { :sort => column, :direction => direction }, { :class => css_class }
   end
 
-  def full_ancestry(cliq)
-    cliq.ancestors << cliq
+  def current_chapter(chapters)
+    "#{chapters.count + 1}"
+  end
+
+  def next_chapter(story, chapter_number)
+    next_chapter_number = chapter_number+1
+    Chapter.where(mystory_id: story.id, number:next_chapter_number).first
   end
 
   def facebook_image(uid)

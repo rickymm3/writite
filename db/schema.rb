@@ -11,69 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413060116) do
+ActiveRecord::Schema.define(version: 20150413212418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cliqs", force: :cascade do |t|
-    t.integer  "parent_id"
-    t.string   "name",                           null: false
-    t.boolean  "is_category", default: false
-    t.string   "ancestry"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "is_main"
-    t.string   "color",       default: "ffffff"
+  create_table "chapters", force: :cascade do |t|
+    t.integer "mystory_id"
+    t.text    "chapter_text"
+    t.integer "number"
+    t.string  "title"
   end
 
-  add_index "cliqs", ["ancestry"], name: "index_cliqs_on_ancestry", using: :btree
-
-  create_table "colors", force: :cascade do |t|
-    t.string   "name"
-    t.string   "color_hex"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "languages", force: :cascade do |t|
+    t.string   "language"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "favorites", force: :cascade do |t|
-    t.integer  "parent_id"
-    t.integer  "user_id"
-    t.integer  "cliq_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "followings", force: :cascade do |t|
-    t.integer  "parent_id"
-    t.integer  "user_id"
-    t.integer  "topic_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "posts", force: :cascade do |t|
-    t.integer  "topic_id"
-    t.integer  "user_id"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "replies", force: :cascade do |t|
-    t.integer  "topic_id"
-    t.integer  "user_id"
-    t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "reports", force: :cascade do |t|
-    t.integer  "topic_id"
-    t.integer  "reply_id"
-    t.integer  "number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "mystories", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "title"
+    t.text    "description"
+    t.integer "category"
+    t.integer "language"
+    t.boolean "mature"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -86,19 +48,6 @@ ActiveRecord::Schema.define(version: 20150413060116) do
     t.integer "role_id"
     t.integer "user_id"
   end
-
-  create_table "topics", force: :cascade do |t|
-    t.text     "subject"
-    t.text     "body"
-    t.integer  "user_id"
-    t.integer  "cliq_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "slug"
-    t.integer  "exp",        default: 0, null: false
-  end
-
-  add_index "topics", ["slug"], name: "index_topics_on_slug", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -113,10 +62,10 @@ ActiveRecord::Schema.define(version: 20150413060116) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "username"
     t.boolean  "is_admin",               default: false
     t.string   "provider"
     t.string   "uid"
+    t.string   "fbname"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -1,0 +1,8 @@
+.well
+  %h3 Your Stories:
+  -if @stories
+    %ul
+      -@stories.each do |story|
+        =link_to story.title, mystory_url(story)
+.well
+  =link_to "Create a New Story", new_mystory_path

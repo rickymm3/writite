@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/cliq-social.iml" filepath="$PROJECT_DIR$/.idea/cliq-social.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Writeit.iml" filepath="$PROJECT_DIR$/.idea/Writeit.iml" />
     </modules>
   </component>
 </project>
-
