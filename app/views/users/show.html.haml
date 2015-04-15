@@ -23,21 +23,6 @@
     %td Updated at
     %td= l( @user.updated_at, :format => :long )
   %tr
-    %td Latest Posts
-    %td
-      -posts = (@replies + @topics).sort_by(&:created_at).reverse!
-      -posts.each do |post|
-        %ul
-          %li
-            -if Topic == post.class
-              %i.fa.fa-user
-              =link_to post.subject, topic_path(post)
-            -elsif Reply == post.class
-              %i.fa.fa-reply-all.fa-rotate-180
-              =link_to post.topic.subject, topic_path(post.topic)
-              -#.well=post.body.html_safe
-
-  %tr
     %td Actions
     %td
       = link_to("Edit", edit_user_registration_path, :class => "btn btn-default")

@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
 
   devise :omniauthable
 
+  extend FriendlyId
+  friendly_id :fbname, use: :slugged
+
+  has_one :profile
   has_and_belongs_to_many :roles
   delegate :can?, :cannot?, :to => :ability
 

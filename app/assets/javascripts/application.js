@@ -8,31 +8,27 @@
 //= require jquery.minicolors
 //= require jquery.minicolors.simple_form
 //= require jquery_ujs
+//= require bootstrap-tokenfield
 //= require twitter/bootstrap
 //= require ckeditor-jquery
+//= require jquery-ui/autocomplete
 //= require_tree ./ckeditor
 // //= require_tree .
 
 $( document ).ready(function() {
 
-    $('.cliq-info-hover').hover(function() {
-        var string
-        string = '.cliq-info-'+$(this).data('cliq-id')
-        console.log(string)
-        $(string).toggle()
+    $('input.tokenize').tokenfield({
+        autocomplete:{
+            // This shows the min length of charcters that must be typed before the autocomplete looks for a match.
+            minLength: 2,
+            // This is the source of the auocomplete suggestions. In this case a list of names from the people controller, in JSON format.
+            source: '<%= tag_list_path(:json) %>'
+            // Once a value in the drop down list is selected, do the following:
+        }
     });
 
     $('.ckeditor').ckeditor({
         // optional config
-    });
-
-    $('.cliq-small').hover(
-        function() {
-            var inner = $(this).find('.cliq-hidden')
-            inner.addClass('cliq-active')
-        }, function() {
-            var inner = $(this).find('.cliq-hidden')
-            inner.removeClass('cliq-active')
     });
 
 });

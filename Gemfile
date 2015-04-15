@@ -10,10 +10,16 @@ gem "uglifier", ">= 1.3.0"
 
 # Use CoffeeScript for .js.coffee assets and views
 gem "coffee-rails", "~> 4.0.0"
+gem 'sass-rails', "~> 5.0.1"
+gem "compass-rails", github: "Compass/compass-rails", branch: "master"
 
 # Use jQuery as the JavaScript library
 gem "jquery-rails"
 gem 'jquery-minicolors-rails'
+
+# Additional JS libraries
+gem 'bootstrap_tokenfield_rails'
+gem 'jquery-ui-rails'
 
 # User authentication
 gem 'devise', :git => 'https://github.com/plataformatec/devise.git', :branch => 'lm-rails-4-2'

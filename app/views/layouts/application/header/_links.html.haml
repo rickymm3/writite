@@ -3,14 +3,30 @@
     Discover
     %span.caret
   %ul.dropdown-menu{:role => "menu"}
-    %li
-      %a{:href => "#"} Another action
-    %li
-      %a{:href => "#"} Something else here
-    %li.divider
-    %li
-      %a{:href => "#"} Separated link
-    %li.divider
+    %ul.unstyled.span4
+      %li
+        .row{:style => "width: 400px;"}
+          %ul.list-unstyled.col-md-4
+            %li
+              %a{:href => "#"} test1-1
+            %li
+              %a{:href => "#"} test1-2
+            %li
+              %a{:href => "#"} test1-3
+          %ul.list-unstyled.col-md-4
+            %li
+              %a{:href => "#"} test2-1
+            %li
+              %a{:href => "#"} test2-2
+            %li
+              %a{:href => "#"} test2-3
+          %ul.list-unstyled.col-md-4
+            %li
+              %a{:href => "#"} test3-1
+            %li
+              %a{:href => "#"} test3-2
+            %li
+              %a{:href => "#"} test3-3
 %li
   =link_to "Create", mystories_path
   %span.sr-only (current)
