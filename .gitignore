@@ -3,7 +3,7 @@
 *.rbc
 capybara-*.html
 .rspec
-.idea
+.idea/
 /log
 /tmp
 /db/*.sqlite3
