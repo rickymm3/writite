@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3095d701-e112-4a94-826a-cfc45b1f0eff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.sample.yml" afterPath="$PROJECT_DIR$/config/application.sample.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/refile.rb" afterPath="$PROJECT_DIR$/config/initializers/refile.rb" />
     </list>
     <ignored path="Writeit.iws" />
@@ -43,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/config/application.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+              <caret line="15" column="14" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -52,8 +51,8 @@
       <file leaf-file-name="refile.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/initializers/refile.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20044543" vertical-offset="0" max-vertical-offset="449">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.13363029" vertical-offset="0" max-vertical-offset="449">
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -151,7 +150,6 @@
         <option value="$PROJECT_DIR$/db/migrate/20150417181043_add_cover_to_mystories.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/initializers/aws.rb" />
-        <option value="$PROJECT_DIR$/config/application.yml" />
         <option value="$PROJECT_DIR$/app/views/mystories/show.html.haml" />
         <option value="$PROJECT_DIR$/app/views/mystories/_form.html.haml" />
         <option value="$PROJECT_DIR$/app/models/mystory.rb" />
@@ -160,6 +158,7 @@
         <option value="$PROJECT_DIR$/app/views/home/index.html.haml" />
         <option value="$PROJECT_DIR$/app/views/home/_featured.html.haml" />
         <option value="$PROJECT_DIR$/config/application.sample.yml" />
+        <option value="$PROJECT_DIR$/config/application.yml" />
         <option value="$PROJECT_DIR$/config/initializers/refile.rb" />
       </list>
     </option>
@@ -400,54 +399,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="writeit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="writeit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="writeit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="writeit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1109,15 +1060,15 @@
     <entry file="file://$PROJECT_DIR$/config/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/refile.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20044543" vertical-offset="0" max-vertical-offset="449">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.13363029" vertical-offset="0" max-vertical-offset="449">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
           <folding />
         </state>
       </provider>
