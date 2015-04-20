@@ -16,6 +16,6 @@ class HomeController < ApplicationController
   end
 
   def get_featured_stories
-    Mystory.all.limit(10).order(created_at: "DESC")
+    Mystory.all.limit(15).order(created_at: "DESC")
   end
 end
