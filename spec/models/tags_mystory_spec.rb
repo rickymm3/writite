@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe "topics/index.html.haml" do
+describe TagsMystory do
   pending "add some examples to (or delete) #{__FILE__}"
 end

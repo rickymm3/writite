@@ -11,5 +11,15 @@
       <user-name>Ricky</user-name>
     </data-source>
     <data-source name="Rails cliq-social: production" uuid="7278f50d-e770-41ff-9219-c36fd1f453e0" />
+    <data-source name="Rails Writeit: development" uuid="f5c5e08b-ff0f-4b4d-a26d-d4bd8b3cc376">
+      <user-name>Ricky</user-name>
+    </data-source>
+    <data-source name="Rails Writeit: test" uuid="df6e7814-9511-40fe-b2f8-31e84a54d9b9">
+      <user-name>Ricky</user-name>
+    </data-source>
+    <data-source name="Rails Writeit: cucumber" uuid="d3b3fd4b-2cc0-407f-8e20-f5c26a4c1c13">
+      <user-name>Ricky</user-name>
+    </data-source>
+    <data-source name="Rails Writeit: production" uuid="177efc5a-e73e-4c8e-b08d-745579d33a80" />
   </component>
 </project>

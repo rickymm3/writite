@@ -1,0 +1,6 @@
+%h5 Popular Tags
+%ul
+-@popular_tags.each do |tag, count|
+  %li.list-unstyled
+    =tag.name
+    =count

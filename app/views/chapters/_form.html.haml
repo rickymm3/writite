@@ -6,5 +6,6 @@
     =f.label "Chapter #{new_chapter_number(@story)}"
     =f.text_area :chapter_text, class: 'ckeditor'
   %div.actions.well
-    .pull-right
+    .pull-right.top-padding-submit
       =f.submit 'Save',  class: "btn btn-default"
+    .clearfix

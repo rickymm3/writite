@@ -1,6 +1,7 @@
 =link_to 'back to Stories', mystories_path
 %h1=@story.title
 %h5=@story.description
+=image_tag attachment_url(@story, :image, :fill, 150,150)
 %h5="by: #{@story.user.email}"
 .well
   %h5 Chapters
@@ -11,6 +12,6 @@
     =link_to "+ Add a Chapter", new_mystory_chapter_path(@story)
   %h5 Tags
   %ul
-    -@tags.each do |tag|
-      %li=tag.tag.capitalize
+    -@story.tags.each do |tag|
+      %li=tag.name.capitalize
 =render "shared/disqus"

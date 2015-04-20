@@ -1,0 +1,15 @@
+%h5 Featured Stories
+%ul.list-inline
+  -@featured.each do |feature|
+    =link_to mystory_path(feature) do
+      %li.col-sm-3
+        %ul
+          %li
+            -if feature.image
+              =image_tag attachment_url(feature, :image, :fill, 100,140)
+            -else
+              =image_tag('layout/nocover.png', size: "100x140")
+          %li=feature.title
+          %li
+            -feature.tags.each do |tag|
+              =tag.name

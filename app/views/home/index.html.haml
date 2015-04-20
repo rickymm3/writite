@@ -1,9 +1,6 @@
-.well
-  %h5 Featured Stories
-  %ol
-    -@featured.each do |feature|
-      %li
-        =link_to feature.title, mystory_path(feature)
-        -feature.tag_lists.each do |tag|
-          =tag.tag
+.well.col-sm-9
+  =render "featured"
+.well.col-sm-3.pull-right
+  =render "popular_tags"
+
 

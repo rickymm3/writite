@@ -1,6 +1,7 @@
 class MystoriesController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create,:edit]
-
+  before_action :set_story, only: [:update, :show, :edit]
+  before_action :check_owner, only: [:update, :edit]
   def index
     if user_signed_in?
       @stories = Mystory.where(:user_id => current_user.id)
@@ -13,22 +14,13 @@ class MystoriesController < ApplicationController
   end
 
   def show
-    @story = Mystory.find(params[:id])
-    @tags = TagList.where(mystory_id:@story.id)
     @chapters = Chapter.where(mystory_id: @story.id).order(:created_at)
   end
 
   def create
-    @story = Mystory.create(title: params[:mystory][:title],
-                            user_id: current_user.id,
-                            description: params[:mystory][:description],
-                            language:params[:mystory][:language],
-                            mature:params[:mystory][:mature])
-    if params[:mystory][:new_tags]
-      tags = params[:mystory][:new_tags].split(',')
-      tags.each do |tag|
-        TagList.create(tag:tag, mystory_id:@story.id)
-      end
+    @story = Mystory.create(mystory_params.merge(user_id: current_user.id))
+    if mystory_params[:new_tags]
+      create_tags(mystory_params[:new_tags])
     end
     respond_to do |format|
       if @story.save
@@ -41,7 +33,32 @@ class MystoriesController < ApplicationController
     end
   end
 
+  def edit
+    @language = Language.all
+  end
+
+  def update
+    @story = Mystory.find(params[:id])
+    if mystory_params[:new_tags]
+      create_tags(mystory_params[:new_tags])
+    end
+    respond_to do |format|
+      if @story.update(mystory_params)
+        format.html { redirect_to @story, notice: 'Item was successfully updated.' }
+      end
+    end
+
+  end
+
   private
+
+  def set_story
+    @story = Mystory.find(params[:id])
+  end
+
+  def mystory_params
+    params.require(:mystory).permit(:image,:title,:description,:language,:mature, :remove_image, :new_tags)
+  end
 
   def check_owner
     unless @story.user_id == current_user.id
@@ -50,4 +67,19 @@ class MystoriesController < ApplicationController
     end
   end
 
+  def create_tags(t)
+    tags = t.split(',')
+    new_tags = Array.new
+    tags.each do |tag|
+      name = tag.strip
+      if Tag.find_by(name:name.downcase)
+        new_tags << Tag.find_by(name:name.downcase)
+      else
+        new_tags << Tag.create(name:name.downcase)
+      end
+    end
+    new_tags.each do |new_tag|
+      TagsMystory.create(mystory_id:@story.id, tag_id:new_tag.id )
+    end
+  end
 end

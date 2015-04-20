@@ -3,13 +3,17 @@
     %br
     = f.error_notification
     = f.input :title
+    = f.attachment_field :image
+    = f.check_box :remove_image
+    = f.label :remove_image
     = f.input :description, as: :text, input_html: {class:"form-control"}
     = f.input :new_tags, :input_html => { class: "tokenize" }
     = f.collection_select :language, @language, :id, :language,
       prompt: "Select a Language"
     = f.input :mature, as: :radio_buttons
   %div.actions.well
-    .pull-right
-      =f.submit 'Reply!',  class: "btn btn-default"
+    .pull-right.top-padding-submit
+      =f.submit 'Save',  class: "btn btn-default"
+    .clearfix
 
 

@@ -31,6 +31,9 @@ gem 'simple_form'
 gem 'ckeditor_rails'
 gem 'friendly_id'
 gem 'figaro'
+gem "aws-sdk", '< 2'
+gem "mini_magick"
+gem "refile", require: ["refile/rails", "refile/image_processing"]
 
 group :test, :development do
   gem "rspec-rails"

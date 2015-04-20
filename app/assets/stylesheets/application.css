@@ -67,3 +67,8 @@ ul {
     padding-left: 10px!important;
     padding-bottom: 10px;
 }
+
+.top-padding-submit {
+    padding-right: 15px;
+    padding-top: 10px;
+}

@@ -8,7 +8,7 @@ BaseApp::Application.routes.draw do
 
   root :to => "home#index"
 
-  devise_for :users, controllers: {:omniauth_callbacks => "users/omniauth_callbacks"}
+  devise_for :users, controllers: {:omniauth_callbacks => "users/omniauth_callbacks",:registrations =>"users/registrations"}
 
   get "pages/index"
   get "/admin" => "admin/base#index", :as => "admin"
@@ -17,9 +17,7 @@ BaseApp::Application.routes.draw do
     resources :users
   end
 
-  resources :users, only: [:show] do
-    resources :profiles
-  end
+  resources :users
 
   get "pages/not_authorized"
 

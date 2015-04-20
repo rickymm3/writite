@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150415185910) do
+ActiveRecord::Schema.define(version: 20150417181043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,12 +45,15 @@ ActiveRecord::Schema.define(version: 20150415185910) do
   end
 
   create_table "mystories", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "title"
-    t.text    "description"
-    t.integer "category"
-    t.integer "language"
-    t.boolean "mature"
+    t.integer  "user_id"
+    t.string   "title"
+    t.text     "description"
+    t.integer  "category"
+    t.integer  "language"
+    t.boolean  "mature"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -64,8 +67,14 @@ ActiveRecord::Schema.define(version: 20150415185910) do
     t.integer "user_id"
   end
 
-  create_table "tag_lists", force: :cascade do |t|
-    t.string   "tag"
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags_mystories", force: :cascade do |t|
+    t.integer  "tag_id"
     t.integer  "mystory_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

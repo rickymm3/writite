@@ -29,21 +29,18 @@
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:writeit_development</jdbc-url>
-      <user-name>Ricky</user-name>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails Writeit: test" uuid="df6e7814-9511-40fe-b2f8-31e84a54d9b9">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:writeit_test</jdbc-url>
-      <user-name>Ricky</user-name>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails Writeit: cucumber" uuid="d3b3fd4b-2cc0-407f-8e20-f5c26a4c1c13">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:writeit_test</jdbc-url>
-      <user-name>Ricky</user-name>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails Writeit: production" uuid="177efc5a-e73e-4c8e-b08d-745579d33a80">
@@ -54,4 +51,3 @@
     </data-source>
   </component>
 </project>
-
