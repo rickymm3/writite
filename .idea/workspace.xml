@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3095d701-e112-4a94-826a-cfc45b1f0eff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/refile.rb" afterPath="$PROJECT_DIR$/config/initializers/refile.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Writeit.iml" afterPath="$PROJECT_DIR$/.idea/Writeit.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Writeit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,11 +50,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="refile.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="refile.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/initializers/refile.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.13363029" vertical-offset="0" max-vertical-offset="449">
-              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.066815145" vertical-offset="0" max-vertical-offset="1200">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -98,16 +110,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mystory.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/mystory.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="show.html.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/mystories/show.html.haml">
           <provider selected="true" editor-type-id="text-editor">
@@ -148,7 +150,6 @@
         <option value="$PROJECT_DIR$/app/views/users/index.html.haml" />
         <option value="$PROJECT_DIR$/app/controllers/users/registrations_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20150417181043_add_cover_to_mystories.rb" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/initializers/aws.rb" />
         <option value="$PROJECT_DIR$/app/views/mystories/show.html.haml" />
         <option value="$PROJECT_DIR$/app/views/mystories/_form.html.haml" />
@@ -160,6 +161,7 @@
         <option value="$PROJECT_DIR$/config/application.sample.yml" />
         <option value="$PROJECT_DIR$/config/application.yml" />
         <option value="$PROJECT_DIR$/config/initializers/refile.rb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -410,7 +412,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../archmage" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="SearchEverywhereHistoryKey" value="refile.rb&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/config/initializers/refile.rb&#10;gem&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/Gemfile&#10;routes&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/config/routes.rb&#10;gitignore&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/.gitignore&#10;show&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/app/views/mystories/show.html.haml&#10;form&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/app/views/mystories/_form.html.haml&#10;links&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/app/views/layouts/application/header/_links.html.haml&#10;gemfile&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/Gemfile&#10;gemfil&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/Gemfile.lock&#10;gemf&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/Gemfile.lock&#10;find_for&#9;null&#9;null&#10;find_for_oauth&#9;null&#9;null&#10;route&#9;FILE&#9;file:///Users/Ricky/Documents/code/Writeit/config/routes.rb" />
+    <property name="SearchEverywhereHistoryKey" value="gemfile&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/Gemfile&#10;refile.rb&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/config/initializers/refile.rb&#10;gem&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/Gemfile&#10;routes&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/config/routes.rb&#10;gitignore&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/.gitignore&#10;show&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/app/views/mystories/show.html.haml&#10;form&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/app/views/mystories/_form.html.haml&#10;links&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/app/views/layouts/application/header/_links.html.haml&#10;gemfil&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/Gemfile.lock&#10;gemf&#9;FILE&#9;file:///Users/Ricky/Documents/code/writeit/Gemfile.lock&#10;find_for&#9;null&#9;null&#10;find_for_oauth&#9;null&#9;null&#10;route&#9;FILE&#9;file:///Users/Ricky/Documents/code/Writeit/config/routes.rb" />
     <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -921,14 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1185">
-          <caret line="45" column="3" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/secret_token.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="436">
@@ -1067,8 +1061,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/initializers/refile.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13363029" vertical-offset="0" max-vertical-offset="449">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.066815145" vertical-offset="0" max-vertical-offset="1200">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
