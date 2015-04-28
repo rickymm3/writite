@@ -26,4 +26,8 @@ module ApplicationHelper
     end
   end
 
+  def num_of_chapters(story)
+    Mystory.find(story.id).chapters.count
+  end
+
 end

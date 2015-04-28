@@ -1,10 +1,9 @@
-.container#page-top-margin
-  %nav.navbar.navbar-default{role:'navigation'}
-    .container-fluid
-      .navbar-header
-        =render "layouts/application/header/brand"
-      %div.collapse.navbar-collapse#navbar-collapse-1
-        %ul.nav.navbar-nav
-          =render "layouts/application/header/links"
-        %ul.nav.navbar-nav.navbar-right
-          =render "layouts/application/header/account"
+%nav.navbar.navbar-default.navbar-static-top{role:'navigation'}
+  .container-fluid
+    .navbar-header
+      =render "layouts/application/header/brand"
+    %div.collapse.navbar-collapse#navbar-collapse-1
+      %ul.nav.navbar-nav
+        =render "layouts/application/header/links"
+      %ul.nav.navbar-nav.navbar-right
+        =render "layouts/application/header/account"

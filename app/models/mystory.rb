@@ -5,7 +5,7 @@ class Mystory < ActiveRecord::Base
   belongs_to :user
   has_many :chapters
 
-  has_many :tags_mystories
+  has_many :tags_mystories, dependent: :destroy
   has_many :tags, through: :tags_mystories
 
   attr_accessor :new_tags

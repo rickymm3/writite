@@ -1,17 +1,50 @@
-=link_to 'back to Stories', mystories_path
-%h1=@story.title
-%h5=@story.description
-=image_tag attachment_url(@story, :image, :fill, 150,150)
-%h5="by: #{@story.user.email}"
-.well
-  %h5 Chapters
-  %ul
-    -@chapters.each do |chapter|
-      %li=link_to "Chapter #{chapter.number}: #{chapter.title}", mystory_chapter_path(@story, chapter)
-  -if user_owned?
-    =link_to "+ Add a Chapter", new_mystory_chapter_path(@story)
-  %h5 Tags
-  %ul
-    -@story.tags.each do |tag|
-      %li=tag.name.capitalize
-=render "shared/disqus"
+.mystories-details
+  .details-container
+    .row
+      .cover.col-sm-3
+        -if @story.image
+          =image_tag attachment_url(@story, :image, :fill, 160,230)
+        -else
+          =image_tag('layout/nocover.png', size: "160x230")
+      .details.col-sm-9
+        .title=@story.title
+        .info
+          .left="#{num_of_chapters(@story)} Chapters"
+          %li.left.tab
+          .left 14 Reads
+          %li.left.tab
+          7 Subscribers
+        .author
+          .circleBase.facebook-image-circle.pull-left
+            -if @story.user.provider
+              = image_tag(facebook_image(@story.user.uid))
+            -else
+              No Image
+          .name
+            ="by #{@story.user.fbname}"
+
+
+
+
+
+
+.mystories-chapters
+  .chapters-container
+    asd
+-#=link_to 'back to Stories', mystories_path
+-#%h1=@story.title
+-#%h5=@story.description
+-#=image_tag attachment_url(@story, :image, :fill, 150,150)
+-#%h5="by: #{@story.user.email}"
+-#.well
+-#  %h5 Chapters
+-#  %ul
+-#    -@chapters.each do |chapter|
+-#      %li=link_to "Chapter #{chapter.number}: #{chapter.title}", mystory_chapter_path(@story, chapter)
+-#  -if user_owned?
+-#    =link_to "+ Add a Chapter", new_mystory_chapter_path(@story)
+-#  %h5 Tags
+-#  %ul
+-#    -@story.tags.each do |tag|
+-#      %li=tag.name.capitalize
+-#=render "shared/disqus"

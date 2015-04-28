@@ -1,0 +1,21 @@
+{
+  "name": "writeit",
+  "version": "0.0.1",
+  "homepage": "https://github.com/rickymm3/writite",
+  "authors": [
+    "rickymm3 <rickymm3@gmail.com>"
+  ],
+  "description": "a book writing website",
+  "keywords": [
+    "book"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ]
+}

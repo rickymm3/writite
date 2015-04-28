@@ -32,5 +32,8 @@ module BaseApp
 
     # Heroku required setting
     config.assets.initialize_on_precompile = false
+
+    #bower config
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
   end
 end

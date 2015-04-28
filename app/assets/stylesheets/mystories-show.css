@@ -1,0 +1,46 @@
+.mystories-details {
+    top: 0;
+    margin-top: -20px;
+    width: 100%;
+    height: 250px;
+    background-color: lightslategray;
+}
+
+.details-container {
+    padding:50px 200px;
+}
+
+.details-container .cover {
+    padding-right: 50px;
+}
+
+.details-container .details {
+    padding-top: 30px;
+    font-family: helvetica, verdana, arial, sans-serif;
+    color: white;
+}
+
+.details-container .details .title {
+    font-size: 30px;
+}
+
+.details-container .details .info {
+    margin-top: 15px;
+}
+
+.details-container .details .author {
+    margin-top: 15px;
+}
+
+.details-container .details .author .name {
+    padding-left: 25px;
+}
+
+.mystories-chapters {
+    margin: 0px 100px;
+    background-color: white;
+    min-height: 500px;
+}
+
+.chapters-container {
+}

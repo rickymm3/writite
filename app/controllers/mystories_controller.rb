@@ -1,7 +1,7 @@
 class MystoriesController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create,:edit]
-  before_action :set_story, only: [:update, :show, :edit]
-  before_action :check_owner, only: [:update, :edit]
+  before_action :set_story, only: [:update, :show, :edit, :publish]
+  before_action :check_owner, only: [:update, :edit, :publish]
   def index
     if user_signed_in?
       @stories = Mystory.where(:user_id => current_user.id)
@@ -44,10 +44,10 @@ class MystoriesController < ApplicationController
     end
     respond_to do |format|
       if @story.update(mystory_params)
+        format.js {render layout: false}
         format.html { redirect_to @story, notice: 'Item was successfully updated.' }
       end
     end
-
   end
 
   private
@@ -57,7 +57,7 @@ class MystoriesController < ApplicationController
   end
 
   def mystory_params
-    params.require(:mystory).permit(:image,:title,:description,:language,:mature, :remove_image, :new_tags)
+    params.require(:mystory).permit(:image,:title,:description,:language,:mature, :remove_image, :new_tags, :published)
   end
 
   def check_owner

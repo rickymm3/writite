@@ -1,11 +1,40 @@
 %h1=@story.title
 %h5="Chapter #{@chapter.number}: #{@chapter.title}"
 .well
-  =@chapter.chapter_text.html_safe
+  -html = Nokogiri::HTML(@chapter.chapter_text)
+  -i = 1
+  -p = html.css("p")
+  -p.each do |line|
+    -line['id'] = "chapt-p-#{i}"
+    -i = i+1
+  #selection=html.to_html.html_safe
   .pull-right=link_to 'edit', edit_mystory_chapter_path(@story, @chapter) if user_owned?
+.well
+  %form
+    %textarea{id:"txtBlock"}
 .well
   -if @next_chapter
     =link_to "Chapter #{@chapter.number + 1}", mystory_chapter_path(@story, @next_chapter)
   -else
     The End
     =link_to "Back to Index", mystory_path(@story)
+-#
+-#:javascript
+-#
+-#  new TextHighlighter(selection, {
+-#    onAfterHighlight: function (range) {
+-#      alert(strip(range));
+-#    }
+-#  });
+-#
+-#  colors.onColorChange(function (color) {
+-#    hltr.setColor(color);
+-#  });
+-#
+-#  function strip(html)
+-#  {
+-#    var tmp = document.createElement("DIV");
+-#    tmp.innerHTML = html;
+-#    return tmp.textContent || tmp.innerText || "";
+-#  }
+-#

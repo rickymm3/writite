@@ -13,6 +13,7 @@
 //= require ckeditor-jquery
 //= require jquery-ui/autocomplete
 //= require_tree ./ckeditor
+//= require text-highlighter
 // //= require_tree .
 
 $( document ).ready(function() {

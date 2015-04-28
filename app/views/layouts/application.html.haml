@@ -21,14 +21,11 @@
     = yield :head
 
     %body
-    .header
-      = render "layouts/application/header"
-    .container
-      .row
-        .col-lg-12.col-md-12.col-sm-12
-          = bootstrap_flash
-          = yield
-      %footer
+      %header
+        = render "layouts/application/header"
+      = bootstrap_flash
+      = yield
+      %footer.footer
         %p &copy; Company 2014
 
 

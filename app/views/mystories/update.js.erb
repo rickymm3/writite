@@ -1,0 +1,7 @@
+$(function() {
+<% if @story.published? %>
+    $("#story-<%=escape_javascript(@story.id.to_s)%>").html("unpublish");
+<% else %>
+    $("#story-<%=escape_javascript(@story.id.to_s)%>").html("publish");
+<% end %>
+});

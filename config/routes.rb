@@ -2,9 +2,10 @@ BaseApp::Application.routes.draw do
 
   resources :mystories do
     resources :chapters
+    member do
+      get :publish
+    end
   end
-
-  resources :tag_lists
 
   root :to => "home#index"
 
