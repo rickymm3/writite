@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430164602) do
+ActiveRecord::Schema.define(version: 20150430211107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,8 @@ ActiveRecord::Schema.define(version: 20150430164602) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "published",    default: false
+    t.boolean  "published",         default: false
+    t.integer  "impressions_count", default: 0
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -38,6 +39,31 @@ ActiveRecord::Schema.define(version: 20150430164602) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "impressions", force: :cascade do |t|
+    t.string   "impressionable_type"
+    t.integer  "impressionable_id"
+    t.integer  "user_id"
+    t.string   "controller_name"
+    t.string   "action_name"
+    t.string   "view_name"
+    t.string   "request_hash"
+    t.string   "ip_address"
+    t.string   "session_hash"
+    t.text     "message"
+    t.text     "referrer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "impressions", ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index", using: :btree
+  add_index "impressions", ["user_id"], name: "index_impressions_on_user_id", using: :btree
 
   create_table "languages", force: :cascade do |t|
     t.string   "language"
@@ -55,22 +81,11 @@ ActiveRecord::Schema.define(version: 20150430164602) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_id"
-    t.boolean  "published",     default: false
+    t.boolean  "published",         default: false
     t.boolean  "featured"
     t.datetime "featured_date"
+    t.integer  "impressions_count", default: 0
   end
-
-  create_table "punches", force: :cascade do |t|
-    t.integer  "punchable_id",                          null: false
-    t.string   "punchable_type", limit: 20,             null: false
-    t.datetime "starts_at",                             null: false
-    t.datetime "ends_at",                               null: false
-    t.datetime "average_time",                          null: false
-    t.integer  "hits",                      default: 1, null: false
-  end
-
-  add_index "punches", ["average_time"], name: "index_punches_on_average_time", using: :btree
-  add_index "punches", ["punchable_type", "punchable_id"], name: "punchable_index", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"

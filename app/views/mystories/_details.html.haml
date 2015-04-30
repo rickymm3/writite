@@ -1,0 +1,29 @@
+-#mystores-index (css)
+.row.col-md-10.col-sm-12.col-xs-12
+  .col-md-3.cover.col-sm-3.col-xs-3
+    -if story.image
+      =image_tag attachment_url(story, :image, :fill, 100,140)
+    -else
+      =image_tag('layout/nocover.png', size: "100x140")
+  .col-md-9.details.col-sm-9.col-xs-9
+    .row
+      .default-title.col-md-12.col-sm-12
+        =link_to story.title, mystory_url(story)
+      .info.col-md-12.col-sm-12
+        .row
+          .col-md-6.col-sm-6
+            .col-sm-4
+              %i.fa.fa-eye
+              =""
+            .col-sm-4
+              %i.fa.fa-star
+              0
+            .col-sm-4
+              %i.fa.fa-comment
+              0
+      .published.col-md-12.col-sm-12
+        .left="#{get_published(story)} Published Chapters"
+        %li.tab.left
+        ="#{get_drafts(story)} Drafts"
+      .updated_at.col-md-12.col-sm-12
+        ="Updated #{time_ago_in_words(story.updated_at)} ago"

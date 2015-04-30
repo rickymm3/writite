@@ -1,7 +1,6 @@
 class Mystory < ActiveRecord::Base
-  acts_as_punchable
   attachment :image, content_type: ["image/jpeg", "image/png"]
-
+  is_impressionable :counter_cache => true
   belongs_to :user
   has_many :chapters
 

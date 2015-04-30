@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   def index
     @featured = get_featured_stories
     @popular_tags = get_popular_tags
-    @popular_reads = Mystory.most_hit(1.week.ago, 10)
+    @popular_reads = get_popular_reads
   end
 
   private
@@ -14,6 +14,10 @@ class HomeController < ApplicationController
       tag_list[Tag.find(k)] = v
     end
     tag_list
+  end
+
+  def get_popular_reads
+    Mystory.where(updated_at: 10.days.ago...Time.now, published:true).order('impressions_count desc').limit(20)
   end
 
   def get_featured_stories

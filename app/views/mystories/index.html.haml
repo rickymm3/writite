@@ -1,31 +1,28 @@
--if @stories
-  .well
-    .mystories-padding
-      %h3 Your Stories:
-      %table.table.table-nonfluid
-        %thead
-          %tr.cover
-          %tr.info
-        %tbody
-          -@stories.each do |story|
-            %tr
-              %td
-                -if story.image
-                  =image_tag attachment_url(story, :image, :fill, 100,140)
-                -else
-                  =image_tag('layout/nocover.png', size: "100x140")
-              %td
-                .details
-                  =render 'shared/details', story:story
-  .well
-    =link_to "Create a New Story", new_mystory_path
--else
-  =render "shared/must_sign_in"
+.container.mystories-container
+  -if @stories
+    .panel
+      .mystories-index
+        .row
+          .col-md-12.col-xs-12
+            %span.pull-left
+              .default-title Your Stories:
+            %span.pull-right
+              =link_to new_mystory_path, class: 'btn btn-default' do
+                %i.fa.fa-pencil-square-o
+                New Story
+        .row
+          .col-md-12.col-xs-12
+            -@stories.each do |story|
+              =render 'details', story:story
+    .well
+      =link_to "Create a New Story", new_mystory_path
+  -else
+    =render "shared/must_sign_in"
 
--#-if story.published
--#  -@publish = 'unpublish'
--#-else
--#  -@publish = 'publish'
--#=simple_form_for [story], remote:true do |f|
--#  =f.input :published, as: :hidden, :input_html => { value: !story.published }
--#  =f.submit @publish,  class: "btn btn-default btn-xs pull-left", id:"story-#{story.id}"
+  -#-if story.published
+  -#  -@publish = 'unpublish'
+  -#-else
+  -#  -@publish = 'publish'
+  -#=simple_form_for [story], remote:true do |f|
+  -#  =f.input :published, as: :hidden, :input_html => { value: !story.published }
+  -#  =f.submit @publish,  class: "btn btn-default btn-xs pull-left", id:"story-#{story.id}"

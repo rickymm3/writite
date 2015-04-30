@@ -2,6 +2,8 @@ class MystoriesController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create,:edit]
   before_action :set_story, only: [:update, :show, :edit, :publish]
   before_action :check_owner, only: [:update, :edit, :publish]
+  impressionist :actions=>[:show]
+
   def index
     if user_signed_in?
       @stories = Mystory.where(:user_id => current_user.id)
@@ -14,7 +16,7 @@ class MystoriesController < ApplicationController
   end
 
   def show
-    @story.punch(request)
+    impressionist(@story, "story show")
     @chapters = Chapter.where(mystory_id: @story.id).order(:created_at)
   end
 

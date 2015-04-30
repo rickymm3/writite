@@ -1,4 +1,5 @@
 class Chapter < ActiveRecord::Base
-  acts_as_punchable
   belongs_to :mystory
+  is_impressionable :counter_cache => true
+
 end

@@ -1,6 +1,7 @@
 class ChaptersController < ApplicationController
   before_action :set_story, only: [:new, :show, :create, :edit]
   before_action :check_owner, only: [:new, :create, :edit]
+  impressionist :actions=>[:show]
 
   def index
     @next_chapter = next_chapter(@story, @chapter.number)
@@ -13,8 +14,7 @@ class ChaptersController < ApplicationController
 
   def show
     @chapter = Chapter.find(params[:id])
-    @chapter.punch(request)
-    @story.punch(request)
+    impressionist(@chapter, "story show")
     @next_chapter = next_chapter(@story, @chapter.number)
   end
 
@@ -44,6 +44,7 @@ class ChaptersController < ApplicationController
                               title: params[:chapter][:title])
     respond_to do |format|
       if @chapter.save
+        @chapter.story.touch
         format.html { redirect_to mystory_chapter_path(@chapter.mystory, @chapter), notice: 'Item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @chapter }
       else

@@ -30,4 +30,12 @@ module ApplicationHelper
     Mystory.find(story.id).chapters.count
   end
 
+  def get_published(story)
+    story.chapters.count {|chapter| chapter.published.is_true?}
+  end
+
+  def get_drafts(story)
+    story.chapters.count {|chapter| chapter.published.is_false?}
+  end
+
 end

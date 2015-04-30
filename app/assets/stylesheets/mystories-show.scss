@@ -6,34 +6,51 @@
     background-color: lightslategray;
 }
 
-.details-container {
-  padding:30px 200px;
-  .cover {
-    overflow:hidden;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    margin-right: 30px;
+.mystories-index {
+  color: #777;
+  padding: 10px 75px ;
+  .row {
+    padding-bottom:20px;
   }
-  .details {
-    padding-top: 20px;
-    font-family: helvetica, verdana, arial, sans-serif;
-    color: white;
-    .title {
-      font-size: 30px;
+  @media(max-width:768px){
+    .cover {
+      min-width: 100px;
     }
-    .info {
-      margin-bottom: 65px;
-    }
-    .author {
-      height: 100%;
-      .name {
-        height: 100%;
-        padding-top: 5px;
-        padding-left: 15px;
-      }
-    }
+    padding: 10px 0px!important;
   }
+  @media(min-width:992px){}
+  @media(min-width:1200px){}
 }
+
+//
+//.details-container {
+//  padding:30px 200px;
+//  .cover {
+//    overflow:hidden;
+//    border-top-right-radius: 15px;
+//    border-bottom-right-radius: 15px;
+//    margin-right: 30px;
+//  }
+//  .details {
+//    padding-top: 20px;
+//    font-family: helvetica, verdana, arial, sans-serif;
+//    color: white;
+//    .title {
+//      font-size: 30px;
+//    }
+//    .info {
+//      margin-bottom: 65px;
+//    }
+//    .author {
+//      height: 100%;
+//      .name {
+//        height: 100%;
+//        padding-top: 5px;
+//        padding-left: 15px;
+//      }
+//    }
+//  }
+//}
 
 .mystories-chapters {
   margin: 0px 100px;
