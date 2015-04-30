@@ -1,0 +1,21 @@
+.row
+  .title
+    =link_to story.title, mystory_url(story)
+  .info
+    .left="#{num_of_chapters(story)} Chapters"
+    %li.left.tab
+    .left 14 Reads
+    %li.left.tab
+    7 Subscribers
+  .author
+    .mystories-image.left
+      .circleBase.facebook-image-circle
+        -if story.user.provider
+          = image_tag(facebook_image(story.user.uid))
+        -else
+          No Image
+    .name.left
+      ="by"
+      =link_to story.user.fbname, user_path(story.user)
+      %br
+      ="updated at #{time_ago_in_words(story.updated_at)}"

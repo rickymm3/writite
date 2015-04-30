@@ -5,7 +5,8 @@
  *= require jquery.minicolors
  *= require bootstrap-tokenfield
  *= require jquery-ui/autocomplete
- *= require mystories-show.css
+ *= require mystories-show.scss
+ *= require chapter.scss
  *= require_self
  *= require_tree .
 */
@@ -16,6 +17,11 @@ html {
 
 body {
     background-color: transparent!important;
+}
+
+.container {
+    margin-top: -25px;
+    padding: 0px 50px 50px 50px;
 }
 
 .top48 {
@@ -99,4 +105,21 @@ ul {
 .facebook-image-circle {
     width: 50px;
     height: 50px;
+}
+
+.clear {
+    clear: both;
+}
+
+.featured-story {
+    font-size: 12px;
+    color: #777;
+    font-weight: bold;
+    height: 200px;
+    padding: 10px;
+    width: 175px;
+}
+
+.table-nonfluid {
+    width: auto !important;
 }

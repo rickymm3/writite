@@ -2,19 +2,21 @@
   .well
     .mystories-padding
       %h3 Your Stories:
-      %table.table
+      %table.table.table-nonfluid
         %thead
           %tr.cover
           %tr.info
         %tbody
           -@stories.each do |story|
             %tr
-              %td.col-md-1
+              %td
                 -if story.image
                   =image_tag attachment_url(story, :image, :fill, 100,140)
                 -else
                   =image_tag('layout/nocover.png', size: "100x140")
-              %td=link_to story.title, mystory_url(story)
+              %td
+                .details
+                  =render 'shared/details', story:story
   .well
     =link_to "Create a New Story", new_mystory_path
 -else
