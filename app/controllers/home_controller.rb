@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   def index
     @featured = get_featured_stories
     @popular_tags = get_popular_tags
+    @popular_reads = Mystory.most_hit(1.week.ago, 10)
   end
 
   private
@@ -16,6 +17,6 @@ class HomeController < ApplicationController
   end
 
   def get_featured_stories
-    Mystory.all.limit(5).order(created_at: "DESC")
+    Mystory.where(featured:true).limit(5).order(created_at: "DESC")
   end
 end

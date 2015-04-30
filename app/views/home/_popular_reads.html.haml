@@ -1,0 +1,13 @@
+%h5 Popular Stories
+%ul.list-inline
+  .row
+    -@popular_reads.each do |popular|
+      =link_to mystory_path(popular) do
+        %li.left.featured-story
+          %ul
+            %li
+              -if popular.image
+                =image_tag attachment_url(popular, :image, :fill, 100,140)
+              -else
+                =image_tag('layout/nocover.png', size: "100x140")
+            %li=popular.title

@@ -35,7 +35,7 @@ gem 'figaro'
 gem "aws-sdk", '< 2'
 gem "mini_magick"
 gem "refile", require: ["refile/rails", "refile/image_processing"]
-
+gem "punching_bag"
 group :test, :development do
   gem "rspec-rails"
   gem "awesome_print"

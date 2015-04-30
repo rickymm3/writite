@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427191334) do
+ActiveRecord::Schema.define(version: 20150430164602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,8 +55,22 @@ ActiveRecord::Schema.define(version: 20150427191334) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_id"
-    t.boolean  "published",   default: false
+    t.boolean  "published",     default: false
+    t.boolean  "featured"
+    t.datetime "featured_date"
   end
+
+  create_table "punches", force: :cascade do |t|
+    t.integer  "punchable_id",                          null: false
+    t.string   "punchable_type", limit: 20,             null: false
+    t.datetime "starts_at",                             null: false
+    t.datetime "ends_at",                               null: false
+    t.datetime "average_time",                          null: false
+    t.integer  "hits",                      default: 1, null: false
+  end
+
+  add_index "punches", ["average_time"], name: "index_punches_on_average_time", using: :btree
+  add_index "punches", ["punchable_type", "punchable_id"], name: "punchable_index", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"

@@ -1,10 +1,8 @@
 .row
-  .title
-    =link_to story.title, mystory_url(story)
   .info
     .left="#{num_of_chapters(story)} Chapters"
     %li.left.tab
-    .left="#{@story.hits} Reads"
+    .left 14 Reads
     %li.left.tab
     7 Subscribers
   .author
@@ -17,5 +15,3 @@
     .name.left
       ="by"
       =link_to story.user.fbname, user_path(story.user)
-      %br
-      ="updated at #{time_ago_in_words(story.updated_at)}"

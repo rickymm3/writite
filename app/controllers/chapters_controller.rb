@@ -13,6 +13,8 @@ class ChaptersController < ApplicationController
 
   def show
     @chapter = Chapter.find(params[:id])
+    @chapter.punch(request)
+    @story.punch(request)
     @next_chapter = next_chapter(@story, @chapter.number)
   end
 

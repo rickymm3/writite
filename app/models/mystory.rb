@@ -1,5 +1,5 @@
 class Mystory < ActiveRecord::Base
-
+  acts_as_punchable
   attachment :image, content_type: ["image/jpeg", "image/png"]
 
   belongs_to :user

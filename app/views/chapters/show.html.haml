@@ -2,6 +2,8 @@
   .book-white
     %h1.text-center=@story.title
     %hr
+    .details
+      =render "details", story:@story, chapter:@chapter
     %h5.text-center="Chapter #{@chapter.number}: #{@chapter.title}"
     %hr
     -html = Nokogiri::HTML(@chapter.chapter_text)

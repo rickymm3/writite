@@ -14,6 +14,7 @@ class MystoriesController < ApplicationController
   end
 
   def show
+    @story.punch(request)
     @chapters = Chapter.where(mystory_id: @story.id).order(:created_at)
   end
 
