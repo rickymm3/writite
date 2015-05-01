@@ -44,7 +44,7 @@ class ChaptersController < ApplicationController
                               title: params[:chapter][:title])
     respond_to do |format|
       if @chapter.save
-        @chapter.story.touch
+        @chapter.mystory.touch
         format.html { redirect_to mystory_chapter_path(@chapter.mystory, @chapter), notice: 'Item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @chapter }
       else
