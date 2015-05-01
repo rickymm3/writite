@@ -1,0 +1,13 @@
+.col-md-12
+  .col-md-8
+    .well
+      .panel
+        .default-title
+          Filter By Tags
+        =simple_form_for :tags, remote:true, :url => {:action => "filter_tag"}, method: :post do |f|
+          =f.input :search_tag
+          =f.input :current_tags, :as => :hidden, :input_html => { :value => @filter_hash }
+          =f.submit '+',  class: "btn btn-default"
+      .panel
+        #tags-list
+        #features

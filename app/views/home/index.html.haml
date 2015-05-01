@@ -1,7 +1,9 @@
-.well.col-md-10
-  .well.col-md-12
-    =render "featured"
-  .well.col-md-12
-    =render "popular_reads"
-.well.col-md-2
-  =render "popular_tags"
+.col-md-12
+  .well.col-md-10
+    .panel.col-md-12
+      =render "featured"
+    .panel.col-md-12
+      =render "popular_reads"
+  .well.col-md-2
+    .panel{style:"padding:10px"}
+      =render "popular_tags"

@@ -7,6 +7,12 @@ BaseApp::Application.routes.draw do
     end
   end
 
+  resources :tags do
+    collection do
+      post :filter_tag
+    end
+  end
+
   root :to => "home#index"
 
   devise_for :users, controllers: {:omniauth_callbacks => "users/omniauth_callbacks",:registrations =>"users/registrations"}

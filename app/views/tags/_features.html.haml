@@ -1,0 +1,6 @@
+%ul
+  -if @stories.present?
+    -@stories.each do |feature|
+      %li=feature.title
+  -else
+    %li No results

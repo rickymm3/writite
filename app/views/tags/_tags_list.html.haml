@@ -1,0 +1,6 @@
+%ul.list-inline
+  -if @filters.present?
+    -@filters.each do |filter|
+      %li=filter.name
+  -else
+    %li No results
