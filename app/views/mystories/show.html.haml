@@ -1,11 +1,5 @@
 .mystories-details
-  .details-container
-    .cover.left
-      -if @story.image
-        =image_tag attachment_url(@story, :image, :fill, 180,260)
-      -else
-        =image_tag('layout/nocover.png', size: "180x260")
-    .details
+  =render "show_details", story:@story
 .mystories-chapters
   .chapters-container
     .start-reading

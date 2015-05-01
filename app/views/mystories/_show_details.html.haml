@@ -1,11 +1,11 @@
--#mystores-index (css)
-.row.col-md-10.col-sm-12.col-xs-12
-  .col-md-3.cover.col-sm-3.col-xs-3
+-#mystories-details (css)
+.row
+  .col-md-5.cover.col-sm-5.col-xs-5
     -if story.image
-      =image_tag attachment_url(story, :image, :fill, 100,140)
+      =image_tag attachment_url(story, :image, :fill, 180,200)
     -else
-      =image_tag('layout/nocover.png', size: "100x140")
-  .col-md-9.details.col-sm-9.col-xs-9
+      =image_tag('layout/nocover.png', size: "180,200")
+  .col-md-7.details.col-sm-7.col-xs-7
     .row
       .default-title.col-md-12.col-sm-12
         =link_to story.title, mystory_url(story)
@@ -27,3 +27,5 @@
         ="#{get_drafts(story)} Drafts"
       .updated_at.col-md-12.col-sm-12
         ="Updated #{time_ago_in_words(story.updated_at)} ago"
+      =render "shared/author_image", story:story
+
